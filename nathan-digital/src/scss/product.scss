@@ -1,0 +1,94 @@
+.product-container {
+  height: 100vh;
+  padding-top: 6.46vw;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  z-index: 1;
+  color: black;
+}
+
+.product-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 14.69vw;
+  text-decoration: none;
+
+  .product-header-main {
+    color: #ffffff94;
+    font-size: 5.21vw;
+    font-weight: 100;
+    margin: 0;
+    transition: 0.3s all ease-in-out;
+  }
+
+  .product-arrow {
+    height: 4.27vw;
+    width: 4.27vw;
+    transform: rotate(90deg);
+    padding-top: 1.41vw;
+    display: block;
+    opacity: 0.5;
+    transition: 0.3s all ease-in-out;
+  }
+
+  &:hover {
+    .product-header-main {
+      color: white;
+      transition: 0.3s all ease-in-out;
+    }
+
+    .product-arrow {
+      opacity: 1;
+      transition: 0.3s all ease-in-out;
+    }
+  }
+}
+
+.product-details {
+  height: 35.8vw;
+  width: 100%;
+  z-index: 2;
+  background: #f6f5ff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1.88vw 0vw 4vw 13.02vw;
+
+  .product-row {
+    height: 100%;
+    width: 17.19vw;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  .product-col {
+    height: 13.02vw;
+    width: 14.58vw;
+
+    .product-header {
+      font-size: 0.94vw;
+      color: black;
+      font-weight: 500;
+      height: 2.08vw;
+      border-bottom: 0.05vw solid #80808059;
+      margin: 0vw;
+    }
+
+    ul {
+      padding: 1.04vw 0vw 0vw 1.04vw;
+      margin: 0vw;
+      list-style: url(../svgs//TransformSection/triangle.svg);
+      font-size: 0.83vw;
+      color: black;
+    }
+    li {
+      font-size: 0.83vw;
+      line-height: 1.9;
+    }
+  }
+}

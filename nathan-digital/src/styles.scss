@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "GeneralSans-Variable", "GeneralSans-VariableItalic",
+    "GeneralSans-Extralight", "GeneralSans-ExtralightItalic",
+    "GeneralSans-Light", "GeneralSans-LightItalic", "GeneralSans-Regular",
+    "GeneralSans-Italic", "GeneralSans-Medium", "GeneralSans-MediumItalic",
+    "GeneralSans-Semibold", "GeneralSans-SemiboldItalic", "GeneralSans-Bold",
+    "GeneralSans-BoldItalic";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: black;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.curtains-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  z-index: 1 !important;
+  pointer-events: none;
+}

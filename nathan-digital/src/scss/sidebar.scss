@@ -1,0 +1,30 @@
+
+
+.SimplePlane2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  padding: 5.21vw 14.06vw;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.SimplePlane2 img {
+  display: none;
+  z-index: 1;
+}
+
+.SimplePlane2 .z2 {
+  z-index: 2;
+}
+
+.SimplePlane2 .closemenu {
+  z-index: 2;
+}

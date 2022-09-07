@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="49" height="49" viewBox="0 0 49 49">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_1047" data-name="Rectangle 1047" width="23" height="15" transform="translate(-0.364 -0.182)" fill="none" stroke="#fff" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Group_8074" data-name="Group 8074" transform="translate(-933 -956)">
+    <g id="Group_8073" data-name="Group 8073" transform="translate(933 956)">
+      <g id="Group_8072" data-name="Group 8072">
+        <g id="Group_8071" data-name="Group 8071">
+          <g id="Group_8070" data-name="Group 8070">
+            <g id="Group_8069" data-name="Group 8069" transform="translate(31.818 13.364) rotate(90)">
+              <g id="Group_8066" data-name="Group 8066" clip-path="url(#clip-path)">
+                <line id="Line_1" data-name="Line 1" x2="20.276" transform="translate(0.998 7.318)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
+                <line id="Line_2" data-name="Line 2" x2="7.603" y2="6.759" transform="translate(13.671 0.56)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
+                <line id="Line_3" data-name="Line 3" y1="6.759" x2="7.603" transform="translate(13.671 7.318)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="2"/>
+              </g>
+            </g>
+            <g id="Ellipse_5" data-name="Ellipse 5" fill="none" stroke="#fff" stroke-width="1">
+              <circle cx="24.5" cy="24.5" r="24.5" stroke="none"/>
+              <circle cx="24.5" cy="24.5" r="24" fill="none"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

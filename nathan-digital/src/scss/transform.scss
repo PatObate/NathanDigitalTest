@@ -1,0 +1,163 @@
+.digital-wrapper {
+  overflow: hidden;
+  height: 100vh;
+  width: 100%;
+  z-index: 2;
+  position: relative;
+}
+
+.SimplePlane {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 6.82vw 7.24vw;
+  z-index: 1;
+}
+
+.SimplePlane img {
+  display: none;
+  z-index: 1;
+}
+
+.SimplePlane .menu {
+  position: absolute;
+  right: 6vw;
+  width: 3vw;
+  height: 4vw;
+  top: 50%;
+  z-index: 3;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    transform: rotate(90deg);
+    display: block;
+    width: 4.17vw;
+    height: 0.03vw;
+    background: white;
+    left: 0vw;
+    top: 50%;
+    position: absolute;
+    transition: 0.3s all ease-in-out !important;
+  }
+
+  &::after {
+    content: "";
+    transform: rotate(90deg);
+    display: block;
+    width: 4.17vw;
+    height: 0.03vw;
+    background: white;
+    left: -1vw;
+    top: 50%;
+    position: absolute;
+    transition: 0.3s all ease-in-out !important;
+  }
+}
+
+.SimplePlane .language-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 4vw;
+  margin-bottom: 2.32vw;
+}
+
+.SimplePlane .language {
+  font-weight: 100;
+  color: white;
+  font-size: 1.04vw;
+}
+
+.SimplePlane .navigation-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.SimplePlane .logo-picture {
+  height: 2vw;
+  width: auto;
+}
+
+.SimplePlane .navigation-menu {
+  font-weight: 100;
+  color: white;
+  font-size: 0.94vw;
+  letter-spacing: 0.1vw;
+  margin-left: 10vw;
+  position: relative;
+  text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-color: #8cf5fd00;
+  transition: 0.3s all ease-in-out !important;
+  padding-bottom: 1.2vw;
+
+  &:hover {
+    text-decoration-color: #8cf6fd;
+    transition: 0.3s all ease-in-out !important;
+ 
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    width: 4.17vw;
+    height: 0.03vw;
+    background: white;
+    left: -5vw;
+    top: 30%;
+    position: absolute;
+    transition: 0.3s all ease-in-out !important;
+  }
+
+  &:hover::before {
+    transition: 0.3s all ease-in-out !important;
+    background: rgba(255, 255, 255, 0);
+  }
+}
+
+.SimplePlane .navigation-menu2 {
+  font-weight: 100;
+  color: white;
+  font-size: 0.94vw;
+  letter-spacing: 0.1vw;
+  margin-left: 10vw;
+  position: relative;
+  text-decoration: underline;
+  text-underline-position: under;
+  text-decoration-color: #8cf5fd00;
+  transition: 0.3s all ease-in-out !important;
+
+  &:hover {
+    text-decoration-color: #8cf6fd;
+    transition: 0.3s all ease-in-out !important;
+  }
+}
+
+.SimplePlane .transform-header {
+  color: white;
+  font-size: 6.25vw;
+  font-weight: 600;
+  line-height: 6.09vw;
+  margin: 0vw;
+  letter-spacing: -0.36vw;
+  position: relative;
+}
+
+.SimplePlane .navbar {
+  width: 100%;
+}
+
+.SimplePlane .dropdown {
+  z-index: 4;
+}
