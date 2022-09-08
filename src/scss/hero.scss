@@ -6,6 +6,7 @@
   justify-content: flex-start;
   overflow: hidden;
   z-index: 1;
+  position: relative;
   background: linear-gradient(
     13deg,
     rgba(109, 109, 199, 1) 35%,
@@ -15,7 +16,7 @@
 
 .hero-wrapper {
   overflow: hidden;
-  z-index: 1;
+  z-index: 2;
 }
 
 .header {
