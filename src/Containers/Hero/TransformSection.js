@@ -23,8 +23,8 @@ const TransformSection = ({ handleHover, handleHover2 }) => {
   useEffect(() => {
     document.addEventListener("mousemove", (event) => {
       const { clientX, clientY } = event;
-      const mouseX = clientX - cursorRef.current.clientWidth / 1.6;
-      const mouseY = clientY - cursorRef.current.clientHeight / 1.6;
+      const mouseX = clientX - cursorRef.current.clientWidth / 1.60;
+      const mouseY = clientY - cursorRef.current.clientHeight / 0.60;
       cursorRef.current.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
     });
   });

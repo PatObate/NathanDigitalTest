@@ -9,6 +9,7 @@
   justify-content: space-between;
   padding: 3vw 7.24vw;
   background: black;
+  z-index: 2;
 }
 
 .SimplePlane {
@@ -170,6 +171,6 @@
   transform: translate3d(0, 0, 0);
   position: fixed;
   z-index: 0;
-  background: radial-gradient(circle, #110431, rgba(0, 0, 0, 1) 100%);
+  background: radial-gradient(circle, #180746, rgba(0, 0, 0, 1) 100%);
   filter: blur(9rem);
 }
