@@ -6,6 +6,11 @@
   justify-content: flex-start;
   overflow: hidden;
   z-index: 1;
+  background: linear-gradient(
+    13deg,
+    rgba(109, 109, 199, 1) 35%,
+    rgba(12, 157, 186, 1) 100%
+  );
 }
 
 .hero-wrapper {

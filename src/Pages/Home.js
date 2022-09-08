@@ -14,8 +14,8 @@ const Home = () => {
 
   return (
     <>
-      {/* <HeroSection /> */}
       <CustomCursor isHover={isHover} />
+      <HeroSection />
       <TransformSection handleHover={handleHover} handleHover2={handleHover2} />
       <VideoSection />
       <VideoSection />

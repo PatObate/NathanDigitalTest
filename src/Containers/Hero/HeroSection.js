@@ -17,7 +17,7 @@ const HeroSection = () => {
         scrollTrigger: {
           trigger: containerRef.current,
           start: "center center",
-          end: "+=100",
+          end: "+=300",
           pin: true,
           scrub: 2,
         },
@@ -32,22 +32,22 @@ const HeroSection = () => {
         },
         "start"
       )
-      .from(
-        containerRef.current,
-        {
-          background:
-            "linear-gradient(13deg, rgba(109,109,199,1) 35%, rgba(12,157,186,1) 100%)",
-        },
-        "start"
-      )
-      .to(
-        containerRef.current,
-        {
-          background:
-            "linear-gradient(13deg, rgba(128,85,121,1) 14%, rgba(244,38,73,1) 100%)",
-        },
-        "start"
-      )
+      // .from(
+      //   containerRef.current,
+      //   {
+      //     background:
+      //       "linear-gradient(13deg, rgba(109,109,199,1) 35%, rgba(12,157,186,1) 100%)",
+      //   },
+      //   "start"
+      // )
+      // .to(
+      //   containerRef.current,
+      //   {
+      //     background:
+      //       "linear-gradient(13deg, rgba(128,85,121,1) 14%, rgba(244,38,73,1) 100%)",
+      //   },
+      //   "start"
+      // )
       .to(
         headerRef.current,
         {
