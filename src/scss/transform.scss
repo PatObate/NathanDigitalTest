@@ -2,8 +2,12 @@
   overflow: hidden;
   height: 100vh;
   width: 100%;
-  z-index: 2;
   position: relative;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5vw 7.24vw;
 }
 
 .SimplePlane {
@@ -14,27 +18,19 @@
   left: 0;
   height: 100vh;
   width: 100%;
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 6.82vw 7.24vw;
-  z-index: 1;
 }
 
 .SimplePlane img {
   display: none;
-  z-index: 1;
 }
 
-.SimplePlane .menu {
+.menu {
   position: absolute;
   right: 6vw;
   width: 3vw;
   height: 4vw;
+  z-index: 2;
   top: 50%;
-  z-index: 3;
-  cursor: pointer;
 
   &::before {
     content: "";
@@ -63,33 +59,37 @@
   }
 }
 
-.SimplePlane .language-wrapper {
+.language-wrapper {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   width: 4vw;
   margin-bottom: 2.32vw;
+  z-index: 2;
+  position: relative;
 }
 
-.SimplePlane .language {
+.language {
   font-weight: 100;
   color: white;
   font-size: 1.04vw;
 }
 
-.SimplePlane .navigation-wrapper {
+.navigation-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  z-index: 2;
 }
 
-.SimplePlane .logo-picture {
+.logo-picture {
   height: 2vw;
   width: auto;
+  z-index: 2;
 }
 
-.SimplePlane .navigation-menu {
+.navigation-menu {
   font-weight: 100;
   color: white;
   font-size: 0.94vw;
@@ -105,7 +105,6 @@
   &:hover {
     text-decoration-color: #8cf6fd;
     transition: 0.3s all ease-in-out !important;
- 
   }
 
   &::before {
@@ -126,7 +125,7 @@
   }
 }
 
-.SimplePlane .navigation-menu2 {
+.navigation-menu2 {
   font-weight: 100;
   color: white;
   font-size: 0.94vw;
@@ -144,7 +143,7 @@
   }
 }
 
-.SimplePlane .transform-header {
+.transform-header {
   color: white;
   font-size: 6.25vw;
   font-weight: 600;
@@ -154,10 +153,22 @@
   position: relative;
 }
 
-.SimplePlane .navbar {
+.navbar {
   width: 100%;
 }
 
-.SimplePlane .dropdown {
-  z-index: 4;
+.dropdown {
+}
+
+.radial-cursor {
+  height: 60vw;
+  width: 60vw;
+  overflow: hidden;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate3d(0, 0, 0);
+  position: fixed;
+  z-index: 0;
+  background: radial-gradient(circle, #09011c, rgba(0, 0, 0, 1) 100%);
+  filter: blur(9rem);
 }
