@@ -21,6 +21,11 @@ body,
   margin: 0;
   padding: 0;
   cursor: none !important;
+  background: linear-gradient(
+    13deg,
+    rgba(191, 83, 81, 1) 35%,
+    rgba(93, 123, 134, 1) 100%
+  );
 }
 
 .curtains-canvas {

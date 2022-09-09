@@ -1,22 +1,21 @@
 .hero-container {
   height: 100vh;
   padding: 5vw 8vw;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   overflow: hidden;
-  z-index: 1;
+  z-index: 2;
   position: relative;
-  background: linear-gradient(
-    13deg,
-    rgba(109, 109, 199, 1) 35%,
-    rgba(12, 157, 186, 1) 100%
-  );
 }
 
 .hero-wrapper {
   overflow: hidden;
-  z-index: 2;
+  height: 100vh;
+  width: 100%;
+  z-index: 3;
+  position: relative;
 }
 
 .header {

@@ -8,7 +8,7 @@ export const RadialCursor = styled.div`
   pointer-events: none;
   transform: translate3d(0, 0, 0);
   position: fixed;
-  z-index: 0;
+  z-index: 1;
   background: radial-gradient(
     circle,
     rgba(255, 255, 255, 0.034) 14%,

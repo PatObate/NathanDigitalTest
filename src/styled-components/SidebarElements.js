@@ -1,30 +1,23 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-
 export const SidebarBackground = styled.div`
   width: 100%;
   height: 100vh;
   background: black;
   position: fixed;
-  z-index: 10;
+  z-index: 12;
   right: ${({ toggle }) => (toggle ? "0" : "-100vw")};
   bottom: 0;
   opacity: ${({ toggle }) => (toggle ? "1" : "0")};
   transition: 0.3s all ease-in-out !important;
-`;
-
-export const SidebarWrapper = styled.div`
-  height: 100%;
-  position: relative;
-  z-index: 1;
-  width: 100%;
   padding: 5.21vw 14.06vw;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
 `;
+
 
 export const SidebarMenu = styled.div`
   width: 50vw;

@@ -1,0 +1,39 @@
+.trusted-container {
+  height: 60vh;
+  width: 100%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+  padding: 0vw 7.24vw;
+}
+
+.trusted-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.trusted-row-2 {
+}
+
+.trusted-header {
+  font-size: 5.21vw;
+  color: black;
+  font-weight: 600;
+  letter-spacing: -0.31vw;
+  line-height: 4.58vw;
+  margin: 0;
+  padding-bottom: 20px;
+}
+
+.trusted-sub {
+  font-size: 20px;
+  color: gray;
+  font-weight: 600;
+  margin: 0;
+  font-weight: 100;
+}

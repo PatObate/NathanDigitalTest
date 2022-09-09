@@ -4,6 +4,7 @@
   width: 100%;
   background: black;
   position: relative;
+  z-index: 1;
 }
 
 .digital-wrapper {
@@ -38,7 +39,7 @@
   width: 3vw;
   height: 4vw;
   z-index: 2;
-  top: 50%;
+  top: 25%;
 
   &::before {
     content: "";
@@ -179,4 +180,24 @@
   z-index: 0;
   background: radial-gradient(circle, #180746, rgba(0, 0, 0, 1) 100%);
   filter: blur(9rem);
+}
+
+.wavy-background {
+  position: absolute;
+  z-index: 1;
+  bottom: -89vw;
+  right: -55vw;
+  height: 180vw;
+  width: auto;
+  mix-blend-mode: luminosity;
+  &::before {
+    content: "";
+    height: 180vw;
+    width: auto;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    background: #2836573f;
+  }
 }

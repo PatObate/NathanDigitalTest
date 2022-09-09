@@ -22,39 +22,26 @@ const HeroSection = () => {
           scrub: 2,
         },
       })
-      .add("start")
-      .add("end")
-      .to(
-        triangleRef.current,
-        {
-          x: -500,
-          scale: 15,
-        },
-        "start"
-      )
-      // .from(
-      //   containerRef.current,
-      //   {
-      //     background:
-      //       "linear-gradient(13deg, rgba(109,109,199,1) 35%, rgba(12,157,186,1) 100%)",
-      //   },
-      //   "start"
-      // )
-      // .to(
-      //   containerRef.current,
-      //   {
-      //     background:
-      //       "linear-gradient(13deg, rgba(128,85,121,1) 14%, rgba(244,38,73,1) 100%)",
-      //   },
-      //   "start"
-      // )
+      .add("background")
+      .add("header")
+      .add("text")
+      .add("triangle")
+      .from(containerRef.current, {
+        background:
+          "linear-gradient(13deg, rgba(109,109,199,1) 35%, rgba(12,157,186,1) 100%)",
+        zIndex: 3,
+      })
+      .from(containerRef.current, {
+        background: "transparent",
+        zIndex: 3,
+      })
       .to(
         headerRef.current,
         {
           opacity: 0,
           scale: 0.7,
         },
-        "start"
+        "header"
       )
       .to(
         subRef.current,
@@ -62,16 +49,24 @@ const HeroSection = () => {
           opacity: 0,
           scale: 0.7,
         },
-        "start"
+        "text"
       )
-      // .to(
-      //   containerRef.current,
-      //   {
-      //     height: "100px",
-      //     delay: 2,
-      //   },
-      //   "end"
-      // );
+      .to(
+        triangleRef.current,
+        {
+          x: -500,
+          scale: 15,
+        },
+        "triangle"
+      );
+    // .to(
+    //   containerRef.current,
+    //   {
+    //     height: "100px",
+    //     delay: 2,
+    //   },
+    //   "end"
+    // );
   }, []);
 
   return (

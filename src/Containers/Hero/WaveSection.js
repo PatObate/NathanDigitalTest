@@ -9,6 +9,7 @@ import { gsap } from "gsap";
 import logo from "../../svgs/TransformSection/Logo.svg";
 import Sidebar from "../../components/sidebar";
 import { DropDown } from "../../styled-components/TransformElements";
+import svgbackground from "../../svgs/VideoSection/background-wave.svg";
 gsap.registerPlugin(ScrollTrigger);
 
 const WaveSection = ({ handleHover, handleHover2 }) => {
@@ -40,15 +41,15 @@ const WaveSection = ({ handleHover, handleHover2 }) => {
   return (
     <>
       <div className="wave-wrapper">
+        <Sidebar isOpen={isOpen} toggle={toggle} />
+        <div
+          className="menu"
+          onClick={toggle}
+          onMouseEnter={handleHover}
+          onMouseLeave={handleHover2}
+        />
         <div className="digital-wrapper">
           <div className="radial-cursor" ref={cursorRef} />
-          <div
-            className="menu"
-            onClick={toggle}
-            onMouseEnter={handleHover}
-            onMouseLeave={handleHover2}
-          ></div>
-          <Sidebar isOpen={isOpen} toggle={toggle} />
           <div className="navbar">
             <div className="language-wrapper">
               <p className="language">EN</p>
@@ -175,13 +176,14 @@ const WaveSection = ({ handleHover, handleHover2 }) => {
             </h1>
           </div>
         </div>
-        <Wave
+        {/* <Wave
           animationData={wave}
           LottieOptions={defaultOptions}
           speed={0.25}
           isStopped={false}
           isPaused={false}
-        />
+        /> */}
+        <img src={svgbackground} alt="background" className="wavy-background" />
       </div>
     </>
   );
