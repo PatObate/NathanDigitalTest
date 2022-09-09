@@ -1,5 +1,12 @@
-.digital-wrapper {
+.wave-wrapper {
+  height: 200vh;
   overflow: hidden;
+  width: 100%;
+  background: black;
+  position: relative;
+}
+
+.digital-wrapper {
   height: 100vh;
   width: 100%;
   position: relative;
@@ -8,7 +15,6 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 3vw 7.24vw;
-  background: black;
   z-index: 1;
 }
 
