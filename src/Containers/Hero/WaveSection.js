@@ -185,7 +185,6 @@ const WaveSection = ({ handleHover, handleHover2 }) => {
           isPaused={false}
         /> */}
         <img src={svgbackground} alt="background" className="wavy-background" />
-        <img src={overlay} alt="background" className="wavy-overlay" />
       </div>
     </>
   );

@@ -18,6 +18,34 @@
 }
 
 .trusted-row-2 {
+  width: 46.88vw;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+
+  .trusted-col {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    img {
+      display: block;
+      width: auto;
+    }
+
+    .img1 {
+      height: 3vw;
+    }
+    .img2 {
+      height: 2vw;
+    }
+    .img3 {
+      height: 5vw;
+    }
+  }
 }
 
 .trusted-header {
@@ -27,11 +55,11 @@
   letter-spacing: -0.31vw;
   line-height: 4.58vw;
   margin: 0;
-  padding-bottom: 20px;
+  padding-bottom: 1.04vw;
 }
 
 .trusted-sub {
-  font-size: 20px;
+  font-size: 1.04vw;
   color: gray;
   font-weight: 600;
   margin: 0;

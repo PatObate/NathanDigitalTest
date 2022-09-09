@@ -12,8 +12,8 @@ export const MainCursor = styled.div`
   .main-cursor-background {
     background: white;
     border-radius: 50%;
-    width: 10px;
-    height: 10px;
+    width: 0.52vw;
+    height: 0.52vw;
     transition: 0.3s all ease-in-out !important;
     display: flex;
     align-items: center;
@@ -23,8 +23,8 @@ export const MainCursor = styled.div`
 
 export const SecondaryCursor = styled.div`
   z-index: 10000;
-  height: 60px;
-  width: 60px;
+  height: 3.13vw;
+  width: 3.13vw;
   pointer-events: none;
   // overflow: hidden;
   transform: translate3d(0, 0, 0);
@@ -34,7 +34,7 @@ export const SecondaryCursor = styled.div`
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    border: 1px solid rgb(255, 255, 255);
+    border: 0.05vw solid rgb(255, 255, 255);
     position: relative;
     background: ${({ hover }) => (hover ? "white" : "transparent")};
     transition: 0.3s all ease-in-out !important;

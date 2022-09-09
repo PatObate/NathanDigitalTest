@@ -50,7 +50,7 @@ export const OverviewMenu = styled.div`
 export const OverviewCard = styled.div`
   width: 62.76vw;
   height: 32.85vw;
-  padding: 60px;
+  padding: 3.13vw;
   border-radius: 2.81vw;
   display: flex;
   align-items: center;
@@ -93,75 +93,76 @@ export const OverviewImg = styled.img`
 `;
 
 export const OverviewButton = styled.button`
-  width: 185px;
-  height: 60px;
+  width: 9.64vw;
+  height: 3.13vw;
   background: white;
-  border-radius: 25px;
+  border-radius: 1.3vw;
   text-align: center;
   color: black;
-  font-size: 20px;
+  font-size: 1.04vw;
   font-weight: 100;
   z-index: 2;
 `;
 
 export const OverviewData = styled.div`
   .icon1 {
-    width: 65px;
-    height: 65px;
-    border-radius: 20px;
+    width: 3.39vw;
+    height: 3.39vw;
+    border-radius: 1.04vw;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 0.78vw;
     background: #191d3f;
-    margin-bottom: 15px;
   }
+
   img {
-    height: 20px;
+    height: 1.04vw;
     width: auto;
     display: block;
   }
   .icon2 {
-    width: 65px;
-    height: 65px;
-    border-radius: 20px;
+    width: 3.39vw;
+    height: 3.39vw;
+    border-radius: 1.04vw;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 0.78vw;
     background: #463b3f;
-    margin-bottom: 15px;
   }
   .icon3 {
-    width: 65px;
-    height: 65px;
-    border-radius: 20px;
+    width: 3.39vw;
+    height: 3.39vw;
+    border-radius: 1.04vw;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 0.78vw;
     background: #463b3f;
-    margin-bottom: 15px;
   }
   .icon4 {
-    width: 65px;
-    height: 65px;
-    border-radius: 20px;
+    width: 3.39vw;
+    height: 3.39vw;
+    border-radius: 1.04vw;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 0.78vw;
     background: #31454c;
-    margin-bottom: 15px;
   }
 
   h2 {
-    margin: 0px 0px 15px 0px;
+    margin: 0vw 0vw 0.78vw 0vw;
     color: white;
-    font-size: 20px;
+    font-size: 1.04vw;
     font-weight: 600;
   }
 
   p {
-    margin: 0px;
+    margin: 0vw;
     color: white;
-    font-size: 20px;
+    font-size: 1.04vw;
     font-weight: 100;
   }
 `;
