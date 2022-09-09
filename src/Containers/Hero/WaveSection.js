@@ -10,6 +10,7 @@ import logo from "../../svgs/TransformSection/Logo.svg";
 import Sidebar from "../../components/sidebar";
 import { DropDown } from "../../styled-components/TransformElements";
 import svgbackground from "../../svgs/VideoSection/background-wave.svg";
+import overlay from "../../images/VideoSection/overlay.png";
 gsap.registerPlugin(ScrollTrigger);
 
 const WaveSection = ({ handleHover, handleHover2 }) => {
@@ -184,6 +185,7 @@ const WaveSection = ({ handleHover, handleHover2 }) => {
           isPaused={false}
         /> */}
         <img src={svgbackground} alt="background" className="wavy-background" />
+        <img src={overlay} alt="background" className="wavy-overlay" />
       </div>
     </>
   );

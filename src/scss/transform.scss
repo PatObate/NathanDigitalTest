@@ -189,15 +189,15 @@
   right: -55vw;
   height: 180vw;
   width: auto;
-  mix-blend-mode: luminosity;
-  &::before {
-    content: "";
-    height: 180vw;
-    width: auto;
-    position: absolute;
-    z-index: 2;
-    top: 0;
-    right: 0;
-    background: #2836573f;
-  }
+}
+
+.wavy-overlay {
+  position: absolute;
+  z-index: 2;
+  bottom: 0px;
+  right: 0px;
+  height: 200vh;
+  width: auto;
+  mix-blend-mode: color;
+  filter: grayscale(100%);
 }
