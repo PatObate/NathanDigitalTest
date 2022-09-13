@@ -3,16 +3,13 @@ import ReactDOM from "react-dom/client";
 import "./fonts.scss";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { Curtains } from "react-curtains";
 import { BrowserRouter as Router } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <>
     <Router>
-      <Curtains>
-        <App />
-      </Curtains>
+      <App />
     </Router>
   </>
 );

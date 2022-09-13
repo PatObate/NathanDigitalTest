@@ -2,15 +2,12 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "../../scss/transform.scss";
 import "../../scss/video.scss";
-import wave from "../../Lottie/purple-wave.json";
 import { ScrollTrigger } from "gsap/all";
-import { Wave } from "../../styled-components/WaveElements";
 import { gsap } from "gsap";
 import logo from "../../svgs/TransformSection/Logo.svg";
 import Sidebar from "../../components/sidebar";
 import { DropDown } from "../../styled-components/TransformElements";
 import svgbackground from "../../svgs/VideoSection/background-wave.svg";
-import overlay from "../../images/VideoSection/overlay.png";
 gsap.registerPlugin(ScrollTrigger);
 
 const WaveSection = ({ handleHover, handleHover2 }) => {
@@ -20,6 +17,10 @@ const WaveSection = ({ handleHover, handleHover2 }) => {
   const cursorRef = React.useRef(null);
   const handleToggle = () => setIsOn(true);
   const handleToggle2 = () => setIsOn(false);
+  const transformRef = useRef();
+  const navRef = useRef();
+  const textRef = useRef();
+  const tl2 = useRef();
 
   const toggle = () => {
     setIsOpen(!isOpen);
@@ -34,10 +35,71 @@ const WaveSection = ({ handleHover, handleHover2 }) => {
     });
   });
 
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-  };
+  useEffect(() => {
+    tl2.current = gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: transformRef.current,
+          start: "top +=200",
+          end: "bottom bottom",
+          scrub: 1,
+          markers: true,
+        },
+      })
+      .add("menu")
+      .add("text")
+      .add("mouse")
+      .from(
+        navRef.current,
+        {
+          opacity: 0,
+        },
+        "menu"
+      )
+      .to(
+        navRef.current,
+        {
+          opacity: 1,
+        },
+        "menu"
+      )
+      .from(
+        textRef.current,
+        {
+          opacity: 0,
+        },
+        "text"
+      )
+      .to(
+        textRef.current,
+        {
+          opacity: 1,
+        },
+        "text"
+      )
+      .from(
+        cursorRef.current,
+        {
+          opacity: 0,
+        },
+        "mouse"
+      )
+      .to(
+        cursorRef.current,
+        {
+          opacity: 1,
+        },
+        "mouse"
+      );
+    // .to(
+    //   triangleRef.current,
+    //   {
+    //     x: -500,
+    //     scale: 15,
+    //   },
+    //   "triangle"
+    // );
+  });
 
   return (
     <>
@@ -49,9 +111,9 @@ const WaveSection = ({ handleHover, handleHover2 }) => {
           onMouseEnter={handleHover}
           onMouseLeave={handleHover2}
         />
-        <div className="digital-wrapper">
+        <div className="digital-wrapper" ref={transformRef}>
           <div className="radial-cursor" ref={cursorRef} />
-          <div className="navbar">
+          <div className="navbar" ref={navRef}>
             <div className="language-wrapper">
               <p className="language">EN</p>
               <p className="language">AR</p>
@@ -162,6 +224,7 @@ const WaveSection = ({ handleHover, handleHover2 }) => {
             className="transform-header"
             onMouseEnter={handleHover}
             onMouseLeave={handleHover2}
+            ref={textRef}
           >
             Software can <br />
             transform your <br />

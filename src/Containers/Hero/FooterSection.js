@@ -12,7 +12,7 @@ const FooterSection = () => {
       <FooterOptions>
         <FooterOption>Privacy Policy</FooterOption>
         <FooterOption>|</FooterOption>
-        <FooterOption>Privacy Policy</FooterOption>
+        <FooterOption>Terms and Conditions</FooterOption>
       </FooterOptions>
       <FooterContent>
         *Banking services provided by Coastal Community Bank, Member FDIC,

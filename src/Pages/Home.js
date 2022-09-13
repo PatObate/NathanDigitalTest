@@ -17,9 +17,17 @@ const Home = () => {
 
   const handleHover = () => setIsHover(true);
   const handleHover2 = () => setIsHover(false);
-  const sectionRef = useRef();
 
-  useEffect(() => {}, []);
+  let panels = gsap.utils.toArray(".panel");
+
+  panels.forEach((panel, i) => {
+    ScrollTrigger.create({
+      trigger: panel,
+      start: "top top",
+      pin: i === panels.length - 1 ? false : true,
+      pinSpacing: false,
+    });
+  });
 
   return (
     <>
@@ -27,9 +35,9 @@ const Home = () => {
         <CustomCursor isHover={isHover} />
         <HeroSection />
         <WaveSection
-          ref={sectionRef}
           handleHover={handleHover}
           handleHover2={handleHover2}
+          className="panel"
         />
         <OverviewSection className="panel" />
         <TrustedSection />
