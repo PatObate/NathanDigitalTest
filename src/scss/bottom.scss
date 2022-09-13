@@ -1,7 +1,7 @@
 .bottom-container {
   position: relative;
   z-index: 2;
-  height: 130vh;
+  height: 140vh;
   width: 100%;
   background: #050215;
   padding: 5.21vw 7.24vw 2.6vw 7.24vw;
@@ -37,7 +37,6 @@
 
 .bottom-div {
   height: 70vh;
-  background: black;
   width: 100%;
   display: flex;
   align-items: flex-start;
@@ -50,4 +49,56 @@
   align-items: flex-start;
   justify-content: space-between;
   flex-direction: column;
+
+  h2 {
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 2.64px;
+    color: white;
+    margin: 0px;
+    padding-bottom: 15px;
+  }
+
+  h3 {
+    font-size: 20px;
+    font-weight: 400;
+    color: #71a2ff;
+    margin: 0px;
+  }
+
+  h4 {
+    font-size: 16px;
+    font-weight: 300;
+    color: #b6bdcc;
+    margin: 0px;
+  }
+
+  ul {
+    padding: 0px;
+    color: white;
+    list-style: none;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 2;
+    margin: 0px;
+  }
+
+  .icon-logo {
+    height: 3vw;
+    width: auto;
+    display: block;
+  }
+
+  .icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 300px;
+
+    .icon {
+      font-size: 2vw;
+      color: white;
+      display: block;
+    }
+  }
 }
