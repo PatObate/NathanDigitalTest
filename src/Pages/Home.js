@@ -13,6 +13,8 @@ import { ScrollTrigger } from "gsap/all";
 import { gsap } from "gsap";
 import TrustedSection from "../Containers/Hero/TrustedSection";
 import WorkSection from "../Containers/Hero/WorkSection";
+import InsightsSection from "../Containers/Hero/InsightsSection";
+import BottomSection from "../Containers/Hero/BottomSection";
 gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
@@ -37,6 +39,8 @@ const Home = () => {
         <OverviewSection className="panel" />
         <TrustedSection />
         <WorkSection />
+        <InsightsSection />
+        <BottomSection />
         {/* <TransformSection />
         <VideoSection /> */}
         {/* <TestSections /> */}
