@@ -10,24 +10,24 @@ export const FooterContainer = styled.div`
 `;
 
 export const FooterOptions = styled.div`
-  width: 200px;
+  width: 10.42vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 20px;
+  padding-bottom: 1.04vw;
 `;
 
 export const FooterOption = styled.p`
-  font-size: 14px;
+  font-size: 0.73vw;
   font-weight: 300;
   margin: 0;
   color: #b6bdcc;
 `;
 
 export const FooterContent = styled.p`
-  font-size: 12px;
+  font-size: 0.63vw;
   font-weight: 300;
   margin: 0;
-  line-height: 17px;
+  line-height: 0.89vw;
   color: #b6bdcc;
 `;

@@ -13,11 +13,11 @@
 
 .bottom-header {
   color: white;
-  font-size: 50px;
+  font-size: 2.6vw;
   font-weight: 600;
-  line-height: 60px;
-  letter-spacing: -1px;
-  line-height: 60px;
+  line-height: 3.13vw;
+  letter-spacing: -0.05vw;
+  line-height: 3.13vw;
 
   span {
     font-weight: 300;
@@ -25,11 +25,11 @@
 }
 
 .bottom-button {
-  height: 57px;
-  width: 180px;
-  border-radius: 30px;
+  height: 2.97vw;
+  width: 9.38vw;
+  border-radius: 1.56vw;
   color: white;
-  font-size: 20px;
+  font-size: 1.04vw;
   font-weight: 300;
   background: #71a2ff;
   border: none;
@@ -51,36 +51,36 @@
   flex-direction: column;
 
   h2 {
-    font-size: 24px;
+    font-size: 1.25vw;
     font-weight: 400;
-    letter-spacing: 2.64px;
+    letter-spacing: 0.14vw;
     color: white;
-    margin: 0px;
-    padding-bottom: 15px;
+    margin: 0vw;
+    padding-bottom: 0.78vw;
   }
 
   h3 {
-    font-size: 20px;
+    font-size: 1.04vw;
     font-weight: 400;
     color: #71a2ff;
-    margin: 0px;
+    margin: 0vw;
   }
 
   h4 {
-    font-size: 16px;
+    font-size: 0.83vw;
     font-weight: 300;
     color: #b6bdcc;
-    margin: 0px;
+    margin: 0vw;
   }
 
   ul {
-    padding: 0px;
+    padding: 0vw;
     color: white;
     list-style: none;
-    font-size: 16px;
+    font-size: 0.83vw;
     font-weight: 300;
     line-height: 2;
-    margin: 0px;
+    margin: 0vw;
   }
 
   .icon-logo {
@@ -93,7 +93,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 300px;
+    width: 15.63vw;
 
     .icon {
       font-size: 2vw;
