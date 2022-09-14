@@ -8,6 +8,7 @@ import logo from "../../svgs/TransformSection/Logo.svg";
 import Sidebar from "../../components/sidebar";
 import { DropDown } from "../../styled-components/TransformElements";
 import svgbackground from "../../svgs/VideoSection/background-wave.svg";
+import background from "../../images/VideoSection/gradient-overlay.png";
 gsap.registerPlugin(ScrollTrigger);
 
 const WaveSection = ({ handleHover, handleHover2 }) => {
@@ -232,7 +233,7 @@ const WaveSection = ({ handleHover, handleHover2 }) => {
           </h1>
           <div />
         </div>
-        <div className="video-container">
+        <div className="video-container  panelsec">
           <div className="demo-video">
             <h1 className="demo-text">
               Nathan Digital Highlights
@@ -248,6 +249,7 @@ const WaveSection = ({ handleHover, handleHover2 }) => {
           isPaused={false}
         /> */}
         <img src={svgbackground} alt="background" className="wavy-background" />
+        <img src={background} alt="background" className="wavy-overlay" />
       </div>
     </>
   );

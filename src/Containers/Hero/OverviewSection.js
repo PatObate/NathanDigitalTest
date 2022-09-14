@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef, useLayoutEffect } from "react";
+import { gsap } from "gsap";
 import {
   OverviewButton,
   OverviewCard,
@@ -16,11 +17,36 @@ import yellow from "../../svgs/OverviewSection/yellow-wallet.svg";
 import red from "../../svgs/OverviewSection/red-wallet.svg";
 import green from "../../svgs/OverviewSection/green-wallet.svg";
 import data from "../../images/OverviewSection/computer-data.png";
+import { ScrollTrigger } from "gsap/all";
+gsap.registerPlugin(ScrollTrigger);
 
 const OverviewSection = () => {
+  const cardRef = useRef();
+  const overviewRef = useRef();
+  const overHeaderRef = useRef();
+
+  const onEnter = () => {
+    gsap.to(cardRef.current, { y: 0, opacity: 1 });
+  };
+
+  const onLeave = () => {
+    gsap.to(cardRef.current, { y: 200, opacity: 0 });
+  };
+
+  useLayoutEffect(() => {
+    gsap.from(overHeaderRef.current, {
+      x: -100,
+      opacity: 0,
+      scrollTrigger: {
+        trigger: overviewRef.current,
+        start: "top +=300",
+      },
+    });
+  }, []);
+
   return (
-    <OverviewContainer>
-      <OverviewHeader>
+    <OverviewContainer ref={overviewRef}>
+      <OverviewHeader ref={overHeaderRef}>
         Our Product
         <br />
         Overview
@@ -28,18 +54,34 @@ const OverviewSection = () => {
       <OverviewContent>
         <OverviewMenu>
           <ul>
-            <li className="main">SUPPLY CHAIN MANAGEMENT</li>
-            <li>CRM and Customer Experience</li>
-            <li>Financial Management</li>
-            <li>Business Technology Platform</li>
-            <li>Spend Management</li>
-            <li>Human Capital</li>
-            <li>Workflow Automation</li>
-            <li>Performance</li>
-            <li>Task Management</li>
+            <li onClick={onEnter}>SUPPLY CHAIN MANAGEMENT</li>
+            <li onMouseEnter={onEnter} onMouseLeave={onLeave}>
+              CRM and Customer Experience
+            </li>
+            <li onMouseEnter={onEnter} onMouseLeave={onLeave}>
+              Financial Management
+            </li>
+            <li onMouseEnter={onEnter} onMouseLeave={onLeave}>
+              Business Technology Platform
+            </li>
+            <li onMouseEnter={onEnter} onMouseLeave={onLeave}>
+              Spend Management
+            </li>
+            <li onMouseEnter={onEnter} onMouseLeave={onLeave}>
+              Human Capital
+            </li>
+            <li onMouseEnter={onEnter} onMouseLeave={onLeave}>
+              Workflow Automation
+            </li>
+            <li onMouseEnter={onEnter} onMouseLeave={onLeave}>
+              Performance
+            </li>
+            <li onMouseEnter={onEnter} onMouseLeave={onLeave}>
+              Task Management
+            </li>
           </ul>
         </OverviewMenu>
-        <OverviewCard>
+        <OverviewCard ref={cardRef}>
           <OverviewRow>
             <OverviewData>
               <div className="icon1">

@@ -48,7 +48,25 @@
     position: absolute;
     top: 6vw;
     right: -10vw;
+
+    @keyframes float {
+      0% {
+        transform: translatey(0vw);
+      }
+
+      50% {
+        transform: translatey(-0.5vw);
+      }
+
+      100% {
+        transform: translatey(0vw);
+      }
+    }
+
+    transform: translatey(0vw);
+    animation: float 6s ease-in-out infinite;
   }
+  
   .work-bubble2 {
     width: auto;
     height: 2.08vw;
@@ -64,7 +82,25 @@
     position: absolute;
     top: 8.5vw;
     right: -8vw;
+
+    @keyframes float {
+      0% {
+        transform: translatey(0vw);
+      }
+
+      50% {
+        transform: translatey(-0.5vw);
+      }
+
+      100% {
+        transform: translatey(0vw);
+      }
+    }
+
+    transform: translatey(0vw);
+    animation: float 6.1s ease-in-out infinite;
   }
+
   .work-bubble3 {
     width: auto;
     height: 2.08vw;
@@ -80,6 +116,23 @@
     position: absolute;
     top: 8.5vw;
     right: -15vw;
+
+    @keyframes float {
+      0% {
+        transform: translatey(0vw);
+      }
+
+      50% {
+        transform: translatey(-0.5vw);
+      }
+
+      100% {
+        transform: translatey(0vw);
+      }
+    }
+
+    transform: translatey(0vw);
+    animation: float 5.9s ease-in-out infinite;
   }
   .work-bubble4 {
     width: auto;
@@ -96,6 +149,23 @@
     position: absolute;
     top: 11vw;
     right: -7vw;
+
+    @keyframes float {
+      0% {
+        transform: translatey(0vw);
+      }
+
+      50% {
+        transform: translatey(-0.5vw);
+      }
+
+      100% {
+        transform: translatey(0vw);
+      }
+    }
+
+    transform: translatey(0vw);
+    animation: float 6.2s ease-in-out infinite;
   }
   .work-bubble5 {
     width: auto;
@@ -112,6 +182,23 @@
     position: absolute;
     top: 11vw;
     right: -13.5vw;
+
+    @keyframes float {
+      0% {
+        transform: translatey(0vw);
+      }
+
+      50% {
+        transform: translatey(-0.5vw);
+      }
+
+      100% {
+        transform: translatey(0vw);
+      }
+    }
+
+    transform: translatey(0vw);
+    animation: float 5.8s ease-in-out infinite;
   }
   .work-bubble6 {
     width: auto;
@@ -128,6 +215,23 @@
     position: absolute;
     top: 13.5vw;
     right: -5vw;
+
+    @keyframes float {
+      0% {
+        transform: translatey(0vw);
+      }
+
+      50% {
+        transform: translatey(-0.5vw);
+      }
+
+      100% {
+        transform: translatey(0vw);
+      }
+    }
+
+    transform: translatey(0vw);
+    animation: float 6.3s ease-in-out infinite;
   }
 }
 

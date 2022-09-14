@@ -1,10 +1,25 @@
-import React from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import "../../scss/work.scss";
 import girl from "../../images/WorkSection/girl.png";
+import gsap from "gsap";
 
 const WorkSection = () => {
+  const workRef = useRef();
+  const x = gsap.utils.selector(workRef);
+
+  useLayoutEffect(() => {
+    gsap.to(x(".work-girl"), {
+      rotation: 360,
+      transformOrigin: "center",
+      ease: "none",
+      duration: 60,
+      repeat: -1,
+    });
+
+  }, []);
+
   return (
-    <div className="work-container">
+    <div className="work-container" ref={workRef}>
       <h1 className="work-heading">
         Let's work together <br />
         to make it happen.

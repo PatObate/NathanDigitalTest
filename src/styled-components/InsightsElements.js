@@ -6,7 +6,7 @@ export const InsightContainer = styled.div`
   position: relative;
   z-index: 2;
   background: #050215;
-  padding: 5.21vw 0vw 5.21vw 7.24vw;
+  padding: 5.21vw 0vw 5.21vw 0vw;
 `;
 
 export const InsightHeader = styled.h1`
@@ -16,6 +16,7 @@ export const InsightHeader = styled.h1`
   margin: 0;
   letter-spacing: -0.05vw;
   line-height: 2.5vw;
+  padding-left: 7.24vw;
   padding-bottom: 1.04vw;
 `;
 
@@ -27,6 +28,14 @@ export const InsightSub = styled.p`
   line-height: 1.3vw;
 `;
 
+export const CardWrapper = styled.div`
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50vw;
+`;
+
 export const InsightTop = styled.div`
   display: flex;
   width: 100%;
@@ -34,6 +43,7 @@ export const InsightTop = styled.div`
   align-items: center;
   padding-bottom: 4.43vw;
   padding-right: 7.24vw;
+  padding-left: 7.24vw;
 `;
 
 export const InsightUl = styled.ul`
@@ -49,8 +59,9 @@ export const InsightUl = styled.ul`
 export const InsightContent = styled.div`
   width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: 25vw;
 `;
 
 export const InsightCard = styled.div`

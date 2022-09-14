@@ -1,11 +1,13 @@
-import React, { useEffect, useRef } from "react";
-import "../../scss/test.scss";
+import React, { useEffect } from "react";
+import OverviewSection from "../Containers/Hero/OverviewSection";
+import WaveSection from "../Containers/Hero/WaveSection";
 import { ScrollTrigger } from "gsap/all";
 import { gsap } from "gsap";
 gsap.registerPlugin(ScrollTrigger);
 
-const TestSections = () => {
+const Overlay = () => {
   let panels = gsap.utils.toArray(".panel");
+
   useEffect(() => {
     panels.forEach((panel, i) => {
       ScrollTrigger.create({
@@ -19,13 +21,10 @@ const TestSections = () => {
   });
   return (
     <>
-      <div className="panel black">1st section</div>
-      <div className="panel red">2nd section</div>
-      <div className="static blue">static section</div>
-      <div className="static black">static section</div>
-      <div className="static red">static section</div>
+      <WaveSection className="panel" />
+      <OverviewSection className="panel" />
     </>
   );
 };
 
-export default TestSections;
+export default Overlay;

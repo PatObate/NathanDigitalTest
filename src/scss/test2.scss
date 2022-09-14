@@ -1,0 +1,45 @@
+.modulecontainer {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: black;
+}
+
+#container {
+  background-color: grey;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: 60vh;
+}
+
+.module {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: white;
+  font-size: 50px;
+  font-weight: 600;
+}
+
+.green {
+  width: 500px;
+  background-color: green;
+}
+
+.yellow {
+  width: 1300px;
+  background-color: yellow;
+}
+
+.purple {
+  width: 800px;
+  background-color: purple;
+}
+
+.orange {
+  width: 800px;
+  background-color: orange;
+}

@@ -168,10 +168,19 @@
 .wavy-background {
   position: absolute;
   z-index: 1;
-  bottom: -89vw;
-  right: -55vw;
-  height: 180vw;
-  width: auto;
+  bottom: -150vw;
+  right: -85vw;
+  height: 233vw;
+  width: 255vw;
   mix-blend-mode: revert;
   filter: hue-rotate(254deg);
+}
+
+.wavy-overlay {
+  position: absolute;
+  z-index: 2;
+  bottom: 0px;
+  right: 0px;
+  width: 100vw;
+  height: 100vh;
 }

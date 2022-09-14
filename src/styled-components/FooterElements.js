@@ -10,7 +10,7 @@ export const FooterContainer = styled.div`
 `;
 
 export const FooterOptions = styled.div`
-  width: 10.42vw;
+  width: 12.50vw;
   display: flex;
   align-items: center;
   justify-content: space-between;

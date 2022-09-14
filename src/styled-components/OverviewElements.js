@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const OverviewContainer = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 100%;
   padding: 5.21vw 7.24vw;
   background: #0c0820;
   z-index: 2;
@@ -38,11 +38,16 @@ export const OverviewMenu = styled.div`
     color: white;
     padding: 0vw;
     line-height: 2.7;
+    transition: 0.3s all ease-in-out;
 
-    .main {
-      text-decoration: underline;
-      text-decoration-color: #71a2ff;
-      color: #71a2ff;
+    li {
+      transition: 0.3s all ease-in-out;
+      :hover {
+        text-decoration: underline;
+        text-decoration-color: #71a2ff;
+        color: #71a2ff;
+        transition: 0.3s all ease-in-out;
+      }
     }
   }
 `;

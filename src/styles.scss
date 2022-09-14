@@ -10,7 +10,11 @@ body {
     "GeneralSans-Semibold", "GeneralSans-SemiboldItalic", "GeneralSans-Bold",
     "GeneralSans-BoldItalic";
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  overflow-y: scroll;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
 }
 
 html,
@@ -20,21 +24,10 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
-  cursor: none !important;
+  // cursor: none !important;
   background: linear-gradient(
     13deg,
     rgba(191, 83, 81, 1) 35%,
     rgba(93, 123, 134, 1) 100%
   );
-}
-
-.curtains-canvas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  opacity: 0;
-  z-index: 1 !important;
-  pointer-events: none;
 }

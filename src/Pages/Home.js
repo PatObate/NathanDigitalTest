@@ -10,7 +10,24 @@ import WorkSection from "../Containers/Hero/WorkSection";
 import InsightsSection from "../Containers/Hero/InsightsSection";
 import BottomSection from "../Containers/Hero/BottomSection";
 import FooterSection from "../Containers/Hero/FooterSection";
+import TestSections from "../Containers/Hero/TestSections";
+import TestSection2 from "../Containers/Hero/TestSection2";
+import Overlay from "./Overlay";
 gsap.registerPlugin(ScrollTrigger);
+
+const overlap = () => {
+  let panelsecs = gsap.utils.toArray(".panelsec");
+
+  panelsecs.forEach((panelsec, i) => {
+    ScrollTrigger.create({
+      trigger: panelsec,
+      start: "top top",
+      pin: i === panelsecs - 1 ? false : true,
+      pinSpacing: false,
+      markers: true,
+    });
+  });
+};
 
 const Home = () => {
   const [isHover, setIsHover] = useState(false);
@@ -18,16 +35,9 @@ const Home = () => {
   const handleHover = () => setIsHover(true);
   const handleHover2 = () => setIsHover(false);
 
-  let panels = gsap.utils.toArray(".panel");
-
-  panels.forEach((panel, i) => {
-    ScrollTrigger.create({
-      trigger: panel,
-      start: "top top",
-      pin: i === panels.length - 1 ? false : true,
-      pinSpacing: false,
-    });
-  });
+  useEffect(() => {
+    overlap();
+  }, []);
 
   return (
     <>
@@ -37,9 +47,8 @@ const Home = () => {
         <WaveSection
           handleHover={handleHover}
           handleHover2={handleHover2}
-          className="panel"
         />
-        <OverviewSection className="panel" />
+        <OverviewSection />
         <TrustedSection />
         <WorkSection />
         <InsightsSection />

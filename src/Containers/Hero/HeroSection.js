@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import "../../scss/hero.scss";
 import { ScrollTrigger } from "gsap/all";
 import { gsap } from "gsap";
@@ -11,7 +11,7 @@ const HeroSection = () => {
   const subRef = useRef();
   const tl1 = useRef();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     tl1.current = gsap
       .timeline({
         scrollTrigger: {
@@ -59,6 +59,8 @@ const HeroSection = () => {
         },
         "triangle"
       );
+
+    tl1.current.scrollTrigger.refresh();
     // .to(
     //   containerRef.current,
     //   {
