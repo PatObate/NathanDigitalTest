@@ -24,7 +24,6 @@ const overlap = () => {
       start: "top top",
       pin: i === panelsecs - 1 ? false : true,
       pinSpacing: false,
-      markers: true,
     });
   });
 };

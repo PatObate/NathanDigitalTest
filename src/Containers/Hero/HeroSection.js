@@ -17,9 +17,10 @@ const HeroSection = () => {
         scrollTrigger: {
           trigger: containerRef.current,
           start: "center center",
-          end: "+=300",
+          end: "bottom +=300",
           pin: true,
           scrub: 2,
+          markers: true,
         },
       })
       .add("background")

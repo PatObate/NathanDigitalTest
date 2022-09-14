@@ -13,7 +13,6 @@ const TestSections = () => {
         start: "top top",
         pin: i === panels - 1 ? false : true,
         pinSpacing: false,
-        markers: true,
       });
     });
   });

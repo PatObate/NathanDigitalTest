@@ -44,7 +44,7 @@ const WaveSection = ({ handleHover, handleHover2 }) => {
           start: "top +=200",
           end: "bottom bottom",
           scrub: 1,
-          markers: true,
+
         },
       })
       .add("menu")
