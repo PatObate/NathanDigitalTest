@@ -18,7 +18,7 @@ const HeroSection = () => {
       .timeline({
         scrollTrigger: {
           trigger: containerRef.current,
-          start: "center center",
+          start: "top top",
           end: "bottom +=600",
           pin: true,
           scrub: 10,
