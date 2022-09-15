@@ -2,6 +2,8 @@ import React, { useLayoutEffect, useRef } from "react";
 import "../../scss/hero.scss";
 import { ScrollTrigger } from "gsap/all";
 import { gsap } from "gsap";
+import triangle from "../../svgs/HeroSection/triangle.svg";
+import triangletrans from "../../svgs/HeroSection/triangletrans.svg";
 gsap.registerPlugin(ScrollTrigger);
 
 const HeroSection = () => {
@@ -17,9 +19,9 @@ const HeroSection = () => {
         scrollTrigger: {
           trigger: containerRef.current,
           start: "center center",
-          end: "bottom +=300",
+          end: "bottom +=600",
           pin: true,
-          scrub: 2,
+          scrub: 10,
           markers: true,
         },
       })
@@ -56,7 +58,7 @@ const HeroSection = () => {
         triangleRef.current,
         {
           x: -500,
-          scale: 15,
+          scale: 20,
         },
         "triangle"
       );
@@ -82,10 +84,15 @@ const HeroSection = () => {
           You can proceed by scrolling. Or use the button below for a more
           detailed experience.
         </p>
-        <div className="triangle-top" />
-        <div className="triangle-left" />
-        <div className="triangle-bottom" />
-        <div className="triangle-right" ref={triangleRef} />
+        <img src={triangletrans} alt="triangle" className="triangle-top" />
+        <img src={triangletrans} alt="triangle" className="triangle-left" />
+        <img src={triangletrans} alt="triangle" className="triangle-bottom" />
+        <img
+          src={triangle}
+          alt="triangle"
+          className="triangle-right"
+          ref={triangleRef}
+        />
       </div>
     </div>
   );

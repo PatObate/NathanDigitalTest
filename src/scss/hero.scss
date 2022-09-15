@@ -39,56 +39,35 @@
 
 // triangles
 .triangle-top {
-  width: 0;
-  height: 0;
-  border-left: 19vw solid transparent;
-  border-right: 19vw solid transparent;
-  border-top: 30vw solid #ffffff13;
+  width: auto;
+  height: 30vw;
   position: absolute;
   left: 15vw;
-  top: -10vw;
+  top: -18vw;
+  transform: rotate(180deg);
 }
 
 .triangle-left {
-  width: 0;
-  height: 0;
-  border-top: 19vw solid transparent;
-  border-bottom: 19vw solid transparent;
-  border-left: 30vw solid #ffffff13;
+  width: auto;
+  height: 30vw;
   position: absolute;
-  left: -10vw;
+  left: -18vw;
   z-index: 1;
+  transform: rotate(90deg);
 }
 
 .triangle-bottom {
-  width: 0;
-  height: 0;
-  border-left: 19vw solid transparent;
-  border-right: 19vw solid transparent;
-  border-bottom: 30vw solid #ffffff13;
+  width: auto;
+  height: 30vw;
   left: 15vw;
-  bottom: -10vw;
+  bottom: -18vw;
   position: absolute;
 }
 
 .triangle-right {
-  width: 0;
-  height: 0;
-  border-left: 19vw solid transparent;
-  border-right: 19vw solid transparent;
-  border-bottom: 30vw solid #ffffff13;
-  right: 0vw;
+  width: auto;
+  height: 30vw;
+  right: 5vw;
   position: absolute;
   z-index: 2;
-  display: flex;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 6.04vw;
-    right: -13.44vw;
-    border-left: 13.5vw solid transparent;
-    border-right: 13.5vw solid transparent;
-    border-bottom: 21vw solid black;
-  }
 }

@@ -30,8 +30,8 @@ const WaveSection = ({ handleHover, handleHover2 }) => {
   useEffect(() => {
     document.addEventListener("mousemove", (event) => {
       const { clientX, clientY } = event;
-      const mouseX = clientX - cursorRef.current.clientWidth / 1.6;
-      const mouseY = clientY - cursorRef.current.clientHeight / 0.6;
+      const mouseX = clientX - cursorRef.current.clientWidth / 1.68;
+      const mouseY = clientY - cursorRef.current.clientHeight / 0.52;
       cursorRef.current.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
     });
   });
