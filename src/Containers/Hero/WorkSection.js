@@ -5,6 +5,7 @@ import gsap from "gsap";
 
 const WorkSection = () => {
   const workRef = useRef();
+  const tl5 = useRef();
   const x = gsap.utils.selector(workRef);
 
   useLayoutEffect(() => {
@@ -16,6 +17,47 @@ const WorkSection = () => {
       repeat: -1,
     });
 
+    tl5.current = gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: workRef.current,
+          start: "top +=500",
+        },
+      })
+      .from(x(".work-heading"), {
+        x: -100,
+        duration: 0.3,
+        opacity: 0,
+      })
+      .from(x(".work-girl"), {
+        x: -100,
+        duration: 0.3,
+        opacity: 0,
+      })
+      .from(x(".bubble"), {
+        duration: 0.2,
+        opacity: 0,
+      })
+      .from(x(".work-h2"), {
+        y: 100,
+        duration: 0.25,
+        opacity: 0,
+      })
+      .from(x(".work-h1"), {
+        y: 100,
+        duration: 0.25,
+        opacity: 0,
+      })
+      .from(x(".work-p"), {
+        y: 100,
+        duration: 0.25,
+        opacity: 0,
+      })
+      .from(x(".work-button"), {
+        y: 100,
+        duration: 0.2,
+        opacity: 0,
+      });
   }, []);
 
   return (
@@ -27,24 +69,24 @@ const WorkSection = () => {
       <div className="work-wrapper">
         <div className="work-row">
           <img src={girl} alt="girl" className="work-girl" />
-          <div className="work-bubble1">#ProductDevelopment</div>
-          <div className="work-bubble2">#CRMImplementation</div>
-          <div className="work-bubble3">#APIintegration</div>
-          <div className="work-bubble4">#APIintegration</div>
-          <div className="work-bubble5">#HRAnalytics</div>
-          <div className="work-bubble6">#DataArtificialIntelligence</div>
+          <div className="work-bubble1 bubble">#ProductDevelopment</div>
+          <div className="work-bubble2 bubble">#CRMImplementation</div>
+          <div className="work-bubble3 bubble">#APIintegration</div>
+          <div className="work-bubble4 bubble">#APIintegration</div>
+          <div className="work-bubble5 bubble">#HRAnalytics</div>
+          <div className="work-bubble6 bubble">#DataArtificialIntelligence</div>
         </div>
         <div className="work-row2">
-          <h2>What we do</h2>
-          <h1>
+          <h2 className="work-h2">What we do</h2>
+          <h1 className="work-h1">
             Trusted experts. Proven <br />
             results.
           </h1>
-          <p>
+          <p className="work-p">
             Our large network of UAE lenders includes established <br />
             and trusted brands includes government entities.
           </p>
-          <button>Contact Us</button>
+          <button className="work-button">Contact Us</button>
         </div>
       </div>
     </div>

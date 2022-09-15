@@ -24,6 +24,8 @@ const OverviewSection = () => {
   const cardRef = useRef();
   const overviewRef = useRef();
   const overHeaderRef = useRef();
+  const tl4 = useRef();
+  const a = gsap.utils.selector(overviewRef);
 
   const onEnter = () => {
     gsap.to(cardRef.current, { y: 0, opacity: 1 });
@@ -34,25 +36,39 @@ const OverviewSection = () => {
   };
 
   useLayoutEffect(() => {
-    gsap.from(overHeaderRef.current, {
-      x: -100,
-      opacity: 0,
-      scrollTrigger: {
-        trigger: overviewRef.current,
-        start: "top +=300",
-      },
-    });
+    tl4.current = gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: overviewRef.current,
+          start: "top +=500",
+        },
+      })
+      .from(a(".overview-header"), {
+        x: -100,
+        duration: 0.3,
+        opacity: 0,
+      })
+      .from(a(".overview-menu"), {
+        x: -100,
+        duration: 0.3,
+        opacity: 0,
+      })
+      .from(a(".overview-card"), {
+        y: 200,
+        duration: 0.3,
+        opacity: 0,
+      });
   }, []);
 
   return (
     <OverviewContainer ref={overviewRef}>
-      <OverviewHeader ref={overHeaderRef}>
+      <OverviewHeader className="overview-header">
         Our Product
         <br />
         Overview
       </OverviewHeader>
       <OverviewContent>
-        <OverviewMenu>
+        <OverviewMenu className="overview-menu">
           <ul>
             <li onClick={onEnter}>SUPPLY CHAIN MANAGEMENT</li>
             <li onMouseEnter={onEnter} onMouseLeave={onLeave}>
@@ -81,7 +97,7 @@ const OverviewSection = () => {
             </li>
           </ul>
         </OverviewMenu>
-        <OverviewCard ref={cardRef}>
+        <OverviewCard className="overview-card" ref={cardRef}>
           <OverviewRow>
             <OverviewData>
               <div className="icon1">

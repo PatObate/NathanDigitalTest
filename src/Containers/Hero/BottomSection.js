@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useLayoutEffect } from "react";
 import "../../scss/bottom.scss";
 import {
   AiFillInstagram,
@@ -7,8 +7,42 @@ import {
   AiFillYoutube,
 } from "react-icons/ai";
 import logo from "../../svgs/BottomSection/Nathan-logo.svg";
+import { ScrollTrigger } from "gsap/all";
+import { gsap } from "gsap";
+gsap.registerPlugin(ScrollTrigger);
 
 const BottomSection = () => {
+  const tl6 = useRef();
+  const bottomRef = useRef();
+  const m = gsap.utils.selector(bottomRef);
+
+  useLayoutEffect(() => {
+    tl6.current = gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: bottomRef.current,
+          start: "top +=500",
+        },
+      })
+      .from(m(".bot1"), {
+        x: -100,
+        duration: 0.3,
+        opacity: 0,
+      })
+      .from(m(".bot2"), {
+        y: 200,
+        duration: 0.3,
+        opacity: 0,
+      })
+      .from(m(".bot3"), {
+        x: 100,
+        duration: 0.3,
+        opacity: 0,
+      });
+
+    tl6.current.scrollTrigger.refresh();
+  }, []);
+
   return (
     <div className="bottom-container">
       <div>
@@ -19,8 +53,8 @@ const BottomSection = () => {
         </h1>
         <button className="bottom-button">Contact Us</button>
       </div>
-      <div className="bottom-div">
-        <div className="bottom-col">
+      <div className="bottom-div" ref={bottomRef}>
+        <div className="bottom-col bot1">
           <div>
             <h2>Products</h2>
             <ul>
@@ -45,7 +79,7 @@ const BottomSection = () => {
             </ul>
           </div>
         </div>
-        <div className="bottom-col">
+        <div className="bottom-col bot2">
           <div>
             <h2>Contact</h2>
             <ul>
@@ -85,7 +119,7 @@ const BottomSection = () => {
           </div>
         </div>
         <div className="bottom-col"></div>
-        <div className="bottom-col">
+        <div className="bottom-col bot3">
           <img src={logo} alt="nathan-logo" className="icon-logo" />
           <h4>© Nathan Digital, all rights reserved.</h4>
         </div>

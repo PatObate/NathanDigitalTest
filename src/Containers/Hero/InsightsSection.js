@@ -20,7 +20,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 const InsightsSection = () => {
   const containerRef = useRef();
+  const tl5 = useRef();
   const moduleContainerRef = useRef();
+  const z = gsap.utils.selector(moduleContainerRef);
 
   useLayoutEffect(() => {
     gsap.to(containerRef.current, {
@@ -38,12 +40,32 @@ const InsightsSection = () => {
         end: () => "+=" + containerRef.current.offsetWidth,
       },
     });
+
+    tl5.current = gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: moduleContainerRef.current,
+          start: "top +=500",
+        },
+      })
+      .from(z(".insight-header"), {
+        x: -100,
+        duration: 0.3,
+        opacity: 0,
+      })
+      .from(z(".insight-sub"), {
+        x: -100,
+        duration: 0.3,
+        opacity: 0,
+      });
   });
   return (
     <InsightContainer ref={moduleContainerRef}>
-      <InsightHeader>Read our latest insights</InsightHeader>
+      <InsightHeader className="insight-header">
+        Read our latest insights
+      </InsightHeader>
       <InsightTop>
-        <InsightSub>
+        <InsightSub className="insight-sub">
           LeedSource shares its expertise and experience on a <br />
           regular basis, no subscription fee required.
         </InsightSub>

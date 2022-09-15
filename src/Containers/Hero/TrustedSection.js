@@ -26,72 +26,30 @@ const TrustedSection = () => {
       .timeline({
         scrollTrigger: {
           trigger: trustedRef.current,
-          start: "top +=300",
+          start: "top +=500",
         },
       })
       .from(q(".trusted-header"), {
         x: -100,
+        duration: 0.3,
         opacity: 0,
       })
-      .from(q("#logo1"), {
+      .from(q(".trusted-sub"), {
+        x: -100,
+        duration: 0.3,
         opacity: 0,
-        duration: 0.2,
-        y: 100,
       })
-      .from(q("#logo2"), {
+      .from(q(".col1"), {
         opacity: 0,
-        duration: 0.2,
-        y: 100,
+        duration: 0.3,
       })
-      .from(q("#logo3"), {
+      .from(q(".col2"), {
         opacity: 0,
-        duration: 0.2,
-        y: 100,
+        duration: 0.3,
       })
-      .from(q("#logo4"), {
+      .from(q(".col3"), {
         opacity: 0,
-        duration: 0.2,
-        y: 100,
-      })
-      .from(q("#logo5"), {
-        opacity: 0,
-        duration: 0.2,
-        y: 100,
-      })
-      .from(q("#logo6"), {
-        opacity: 0,
-        duration: 0.2,
-        y: 100,
-      })
-      .from(q("#logo7"), {
-        opacity: 0,
-        duration: 0.2,
-        y: 100,
-      })
-      .from(q("#logo8"), {
-        opacity: 0,
-        duration: 0.2,
-        y: 100,
-      })
-      .from(q("#logo9"), {
-        opacity: 0,
-        duration: 0.2,
-        y: 100,
-      })
-      .from(q("#logo10"), {
-        opacity: 0,
-        duration: 0.2,
-        y: 100,
-      })
-      .from(q("#logo11"), {
-        opacity: 0,
-        duration: 0.2,
-        y: 100,
-      })
-      .from(q("#logo12"), {
-        opacity: 0,
-        duration: 0.2,
-        y: 100,
+        duration: 0.3,
       });
 
     tl3.current.scrollTrigger.refresh();
@@ -111,19 +69,19 @@ const TrustedSection = () => {
           </p>
         </div>
         <div className="trusted-row-2">
-          <div className="trusted-col">
+          <div className="trusted-col col1">
             <img src={chanel} alt="img" className="img1" id="logo1" />
             <img src={roche} alt="img" className="img1" id="logo2" />
             <img src={delong} alt="img" className="img1" id="logo3" />
             <img src={med} alt="img" className="img3" id="logo4" />
           </div>
-          <div className="trusted-col">
+          <div className="trusted-col col2">
             <img src={shon} alt="img" className="img2" id="logo5" />
             <img src={momz} alt="img" className="img1" id="logo6" />
             <img src={adq} alt="img" className="img1" id="logo7" />
             <img src={wilhe} alt="img" className="img1" id="logo8" />
           </div>
-          <div className="trusted-col">
+          <div className="trusted-col col3">
             <img src={amap} alt="img" className="img3" id="logo9" />
             <img src={alfa} alt="img" className="img1" id="logo10" />
             <img src={alhal} alt="img" className="img1" id="logo11" />
