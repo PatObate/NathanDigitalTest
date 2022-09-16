@@ -1,20 +1,25 @@
 import React from "react";
 import "./styles.scss";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Home from "./Pages/Home";
 import Product from "./Pages/Product";
 import Intro from "./Pages/Intro";
 import ScrollToTop from "./Scripts/scrollToTop";
+import { AnimatePresence } from "framer-motion";
 
 const App = () => {
+  const location = useLocation();
+
   return (
     <>
       <ScrollToTop />
-      <Routes>
-        <Route exact path="/" element={<Intro />} />
-        <Route exact path="/home" element={<Home />} />
-        <Route exact path="/products" element={<Product />} />
-      </Routes>
+      {/* <AnimatePresence exitBeforeEnter> */}
+        <Routes location={location} key={location.key}>
+          <Route exact path="/" element={<Intro />} />
+          <Route exact path="/home" element={<Home />} />
+          <Route exact path="/products" element={<Product />} />
+        </Routes>
+      {/* </AnimatePresence> */}
     </>
   );
 };

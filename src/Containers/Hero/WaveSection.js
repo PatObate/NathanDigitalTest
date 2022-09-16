@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState, useLayoutEffect } from "react";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import "../../scss/transform.scss";
 import "../../scss/video.scss";
@@ -11,6 +12,16 @@ import svgbackground from "../../svgs/VideoSection/background-wave.svg";
 import background from "../../images/VideoSection/gradient-overlay.png";
 import vid from "../../video/Nathan+Digital+Video.mp4";
 gsap.registerPlugin(ScrollTrigger);
+
+const containerVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: { delay: 0.5, duration: 1 },
+  },
+};
 
 const WaveSection = ({ handleHover, handleHover2 }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -59,7 +70,13 @@ const WaveSection = ({ handleHover, handleHover2 }) => {
           onMouseLeave={handleHover2}
           ref={menuRef}
         />
-        <div className="digital-wrapper" ref={transformRef}>
+        <motion.div
+          className="digital-wrapper"
+          ref={transformRef}
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
           <div className="radial-cursor" ref={cursorRef} />
           <div className="navbar" ref={navRef}>
             <div className="language-wrapper">
@@ -179,7 +196,7 @@ const WaveSection = ({ handleHover, handleHover2 }) => {
             business
           </h1>
           <div />
-        </div>
+        </motion.div>
         <div className="video-container panelsec">
           <div className="demo-video-wrap">
             <span className="t_over"></span>
