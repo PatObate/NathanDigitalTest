@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "../../scss/cursor.scss";
 import {
   MainCursor,
@@ -7,9 +7,9 @@ import {
 } from "../../styled-components/CursorElements";
 
 const CustomCursor = ({ isHover }) => {
-  const secondaryCursor = React.useRef(null);
-  const mainCursor = React.useRef(null);
-  const positionRef = React.useRef({
+  const secondaryCursor = useRef(null);
+  const mainCursor = useRef(null);
+  const positionRef = useRef({
     mouseX: 0,
     mouseY: 0,
     destinationX: 0,
@@ -19,7 +19,7 @@ const CustomCursor = ({ isHover }) => {
     key: -1,
   });
 
-  React.useEffect(() => {
+  useEffect(() => {
     document.addEventListener("mousemove", (event) => {
       const { clientX, clientY } = event;
 
@@ -35,11 +35,9 @@ const CustomCursor = ({ isHover }) => {
         mouseX - mainCursor.current.clientWidth / 2
       }px, ${mouseY - mainCursor.current.clientHeight / 2}px, 0)`;
     });
-
-    return () => {};
   }, []);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const followMouse = () => {
       positionRef.current.key = requestAnimationFrame(followMouse);
       const {
@@ -68,7 +66,6 @@ const CustomCursor = ({ isHover }) => {
           positionRef.current.destinationY += distanceY;
         }
       }
-      secondaryCursor.current.style.transform = `translate3d(${destinationX}px, ${destinationY}px, 0)`;
       secondaryCursor.current.style.transform = `translate3d(${destinationX}px, ${destinationY}px, 0)`;
     };
     followMouse();

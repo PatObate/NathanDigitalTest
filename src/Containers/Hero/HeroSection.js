@@ -15,9 +15,11 @@ const HeroSection = () => {
   const tl1 = useRef();
   let navigate = useNavigate();
 
-  function handleSubmit() {
+  const handleSubmit = () => {
     navigate("home");
-  }
+  };
+
+  const zoomIn = () => {};
 
   useLayoutEffect(() => {
     // ScrollTrigger.create({
@@ -35,7 +37,7 @@ const HeroSection = () => {
           end: "+=400",
           onLeave: handleSubmit,
           pin: true,
-          id: "my-id",
+          id: "myId",
           scrub: 2,
         },
       })
@@ -76,6 +78,7 @@ const HeroSection = () => {
         },
         "triangle"
       );
+    // ScrollTrigger.getById("myId").kill();
 
     // .to(
     //   containerRef.current,
@@ -94,7 +97,7 @@ const HeroSection = () => {
     //   "end"
     // );
     // tl1.current.scrollTrigger.kill();
-  });
+  }, [handleSubmit]);
 
   return (
     <div>

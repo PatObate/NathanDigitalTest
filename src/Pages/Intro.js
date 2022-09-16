@@ -6,7 +6,7 @@ const Intro = () => {
   return (
     <>
       <div>
-        <CustomCursor />
+        {/* <CustomCursor /> */}
         <HeroSection />
       </div>
     </>

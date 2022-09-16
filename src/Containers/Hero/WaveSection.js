@@ -26,6 +26,12 @@ const WaveSection = ({ handleHover, handleHover2 }) => {
   const wavybackRef = useRef();
   const tl2 = useRef();
 
+  // var foo = true;
+  // if (foo) {
+  //   window.location.reload(true);
+  //   foo = false;
+  // }
+
   const toggle = () => {
     setIsOpen(!isOpen);
   };
@@ -37,7 +43,9 @@ const WaveSection = ({ handleHover, handleHover2 }) => {
       const mouseY = clientY - cursorRef.current.clientHeight / 1.9;
       cursorRef.current.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
     });
-  });
+
+    // JavaScript anonymous function
+  }, []);
 
   useLayoutEffect(() => {
     tl2.current = gsap

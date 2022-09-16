@@ -31,17 +31,17 @@ const Home = () => {
   const handleHover2 = () => setIsHover(false);
 
   useEffect(() => {
+    ScrollTrigger.getById("myId").kill();
     overlap();
+  
   }, []);
+
 
   return (
     <>
       <div>
-        <CustomCursor isHover={isHover} />
-        <WaveSection
-          handleHover={handleHover}
-          handleHover2={handleHover2}
-        />
+        {/* <CustomCursor isHover={isHover} /> */}
+        <WaveSection handleHover={handleHover} handleHover2={handleHover2} />
         <OverviewSection />
         <TrustedSection />
         <WorkSection />
