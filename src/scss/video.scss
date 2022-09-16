@@ -10,18 +10,106 @@
   justify-content: center;
 }
 
-.demo-video {
+.demo-video-wrap {
   height: 37.66vw;
-  width: 81.91vw;
+  width: 60.91vw;
   position: relative;
+  transition: all 0.6s ease-out;
+  perspective: 1000px;
+  z-index: 5;
+}
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-weight: 600;
-  line-height: 1;
-  z-index: 2;
+.demo-video {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background: rgba(0, 0, 0, 0.377);
+  transition: all 0.6s ease-out;
+  transform: rotateX(0deg) rotateX(0deg);
+  perspective: 1000px;
+  transform-style: preserve-3d;
+
+  &:hover {
+    transition: all 0.3s linear;
+  }
+}
+
+.t_over {
+  width: 33.333%;
+  height: 33.333%;
+  position: absolute;
+  z-index: 1;
+}
+
+.t_over:nth-child(1) {
+  left: 0;
+  top: 0;
+
+  :hover {
+    .tilt-box {
+      transform: rotateX(-10deg) rotateY(10deg);
+    }
+  }
+}
+.t_over:nth-child(2) {
+  left: 33.333%;
+  top: 0;
+}
+.t_over:nth-child(3) {
+  left: 66.666%;
+  top: 0;
+}
+.t_over:nth-child(4) {
+  left: 0;
+  top: 33.333%;
+}
+.t_over:nth-child(5) {
+  left: 33.333%;
+  top: 33.333%;
+}
+.t_over:nth-child(6) {
+  left: 66.666%;
+  top: 33.333%;
+}
+.t_over:nth-child(7) {
+  left: 0%;
+  top: 66.666%;
+}
+.t_over:nth-child(8) {
+  left: 33.333%;
+  top: 66.666%;
+}
+.t_over:nth-child(9) {
+  left: 66.666%;
+  top: 66.666%;
+}
+
+.t_over:nth-child(1):hover ~ .demo-video {
+  transform: rotateX(-20deg) rotateY(20deg);
+}
+.t_over:nth-child(2):hover ~ .demo-video {
+  transform: rotateX(-20deg) rotateY(0deg);
+}
+.t_over:nth-child(3):hover ~ .demo-video {
+  transform: rotateX(-20deg) rotateY(-20deg);
+}
+.t_over:nth-child(4):hover ~ .demo-video {
+  transform: rotateX(0deg) rotateY(20deg);
+}
+.t_over:nth-child(5):hover ~ .demo-video {
+  transform: rotateX(0deg) rotateY(0deg);
+}
+.t_over:nth-child(6):hover ~ .demo-video {
+  transform: rotateX(0deg) rotateY(-20deg);
+}
+.t_over:nth-child(7):hover ~ .demo-video {
+  transform: rotateX(20deg) rotateY(20deg);
+}
+.t_over:nth-child(8):hover ~ .demo-video {
+  transform: rotateX(20deg) rotateY(0deg);
+}
+.t_over:nth-child(9):hover ~ .demo-video {
+  transform: rotateX(20deg) rotateY(-20deg);
 }
 
 .demo-text {

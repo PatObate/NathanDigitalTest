@@ -9,6 +9,7 @@ import Sidebar from "../../components/sidebar";
 import { DropDown } from "../../styled-components/TransformElements";
 import svgbackground from "../../svgs/VideoSection/background-wave.svg";
 import background from "../../images/VideoSection/gradient-overlay.png";
+import vid from "../../video/Nathan+Digital+Video.mp4";
 gsap.registerPlugin(ScrollTrigger);
 
 const WaveSection = ({ handleHover, handleHover2 }) => {
@@ -46,61 +47,6 @@ const WaveSection = ({ handleHover, handleHover2 }) => {
 
     // JavaScript anonymous function
   }, []);
-
-  useLayoutEffect(() => {
-    tl2.current = gsap
-      .timeline
-      //   {
-      //   scrollTrigger: {
-      //     trigger: waveRef.current,
-      //   },
-      // }
-      ()
-      .from(
-        navRef.current,
-        {
-          opacity: 0,
-        },
-        1.2
-      )
-      .from(
-        textRef.current,
-        {
-          opacity: 0,
-        },
-        1.2
-      )
-      .from(
-        cursorRef.current,
-        {
-          opacity: 0,
-        },
-        1.2
-      )
-      .from(
-        wavybackRef.current,
-        {
-          opacity: 0,
-        },
-        1.2
-      )
-      .from(
-        menuRef.current,
-        {
-          opacity: 0,
-        },
-        1.2
-      );
-
-    // .to(
-    //   triangleRef.current,
-    //   {
-    //     x: -500,
-    //     scale: 15,
-    //   },
-    //   "triangle"
-    // );
-  });
 
   return (
     <>
@@ -234,12 +180,20 @@ const WaveSection = ({ handleHover, handleHover2 }) => {
           </h1>
           <div />
         </div>
-        <div className="video-container  panelsec">
-          <div className="demo-video">
-            <h1 className="demo-text">
-              Nathan Digital Highlights
-              <br /> <span className="demo-tiny">Under 2 minutes</span>
-            </h1>
+        <div className="video-container panelsec">
+          <div className="demo-video-wrap">
+            <span className="t_over"></span>
+            <span className="t_over"></span>
+            <span className="t_over"></span>
+            <span className="t_over"></span>
+            <span className="t_over"></span>
+            <span className="t_over"></span>
+            <span className="t_over"></span>
+            <span className="t_over"></span>
+            <span className="t_over"></span>
+            <video className="demo-video" autoPlay={true} muted={true}>
+              <source src={vid} type="video/mp4" />
+            </video>
           </div>
         </div>
         {/* <Wave
