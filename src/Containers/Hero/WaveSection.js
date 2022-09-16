@@ -25,6 +25,7 @@ const containerVariants = {
 
 const WaveSection = ({ handleHover, handleHover2 }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isOpen2, setIsOpen2] = useState(false);
   const [isOn, setIsOn] = useState(false);
 
   const cursorRef = React.useRef(null);
@@ -46,6 +47,9 @@ const WaveSection = ({ handleHover, handleHover2 }) => {
 
   const toggle = () => {
     setIsOpen(!isOpen);
+  };
+  const toggle2 = () => {
+    setIsOpen2(!isOpen2);
   };
 
   useEffect(() => {
@@ -232,7 +236,6 @@ const WaveSection = ({ handleHover, handleHover2 }) => {
           animate="visible"
         />
         <img
-   
           src={background}
           alt="background"
           className="wavy-overlay"

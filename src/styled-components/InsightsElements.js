@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import img1 from "../images/InsightSection/ikea1.jpg";
+import img2 from "../images/InsightSection/ikea2.jpg";
 
 export const InsightContainer = styled.div`
   height: 100vh;
@@ -75,6 +77,10 @@ export const InsightCard = styled.div`
   justify-content: space-between;
   flex-direction: column;
   border-radius: 1.67vw;
+  background-image: url(${img1});
+  background-position: 10vw left;
+  background-size: 16vw 23.18vw;
+  background-repeat: no-repeat;
 
   img {
     height: 3vw;

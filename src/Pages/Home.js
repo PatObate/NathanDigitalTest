@@ -33,9 +33,7 @@ const Home = () => {
   useEffect(() => {
     ScrollTrigger.getById("myId").kill();
     overlap();
-  
   }, []);
-
 
   return (
     <>

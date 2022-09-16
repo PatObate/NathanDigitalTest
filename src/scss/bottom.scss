@@ -9,6 +9,10 @@
   align-items: flex-start;
   justify-content: space-between;
   flex-direction: column;
+  background-image: url("../svgs/lines.svg");
+  background-position: top right;
+  background-size: 56vw 56vw;
+  background-repeat: no-repeat;
 }
 
 .bottom-header {
