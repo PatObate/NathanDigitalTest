@@ -63,12 +63,14 @@ const WaveSection = ({ handleHover, handleHover2 }) => {
     <>
       <div className="wave-wrapper" ref={waveRef}>
         <Sidebar isOpen={isOpen} toggle={toggle} />
-        <div
+        <motion.div
           className="menu"
           onClick={toggle}
           onMouseEnter={handleHover}
           onMouseLeave={handleHover2}
-          ref={menuRef}
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
         />
         <motion.div
           className="digital-wrapper"
@@ -220,13 +222,21 @@ const WaveSection = ({ handleHover, handleHover2 }) => {
           isStopped={false}
           isPaused={false}
         /> */}
-        <img
+        <motion.img
           src={svgbackground}
           alt="background"
           className="wavy-background"
           ref={wavybackRef}
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
         />
-        <img src={background} alt="background" className="wavy-overlay" />
+        <img
+   
+          src={background}
+          alt="background"
+          className="wavy-overlay"
+        />
       </div>
     </>
   );
