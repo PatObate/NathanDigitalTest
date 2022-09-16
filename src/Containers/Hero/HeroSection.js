@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/all";
 import { gsap } from "gsap";
 import triangle from "../../svgs/HeroSection/triangle.svg";
 import triangletrans from "../../svgs/HeroSection/triangletrans.svg";
+import { useNavigate } from "react-router-dom";
 gsap.registerPlugin(ScrollTrigger);
 
 const HeroSection = () => {
@@ -12,17 +13,30 @@ const HeroSection = () => {
   const headerRef = useRef();
   const subRef = useRef();
   const tl1 = useRef();
+  let navigate = useNavigate();
+
+  function handleSubmit() {
+    navigate("home");
+  }
 
   useLayoutEffect(() => {
+    // ScrollTrigger.create({
+    //   trigger: containerRef.current,
+    //   start: "top top",
+    //   end: "bottom +=400",
+    //   onEnter: handleSubmit,
+    // });
+
     tl1.current = gsap
       .timeline({
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top top",
-          end: "bottom +=600",
+          end: "+=400",
+          onLeave: handleSubmit,
           pin: true,
-          scrub: 10,
-          markers: true,
+          id: "my-id",
+          scrub: 2,
         },
       })
       .add("background")
@@ -63,7 +77,14 @@ const HeroSection = () => {
         "triangle"
       );
 
-    tl1.current.scrollTrigger.refresh();
+    // .to(
+    //   containerRef.current,
+    //   {
+    //     display: "none",
+    //   },
+    //   "triangle"
+    // );
+
     // .to(
     //   containerRef.current,
     //   {
@@ -72,27 +93,31 @@ const HeroSection = () => {
     //   },
     //   "end"
     // );
-  }, []);
+    // tl1.current.scrollTrigger.kill();
+  });
 
   return (
-    <div className="hero-wrapper" ref={containerRef}>
-      <div className="hero-container">
-        <h1 className="header" ref={headerRef}>
-          We Create The Next
-        </h1>
-        <p className="sub" ref={subRef}>
-          You can proceed by scrolling. Or use the button below for a more
-          detailed experience.
-        </p>
-        <img src={triangletrans} alt="triangle" className="triangle-top" />
-        <img src={triangletrans} alt="triangle" className="triangle-left" />
-        <img src={triangletrans} alt="triangle" className="triangle-bottom" />
-        <img
-          src={triangle}
-          alt="triangle"
-          className="triangle-right"
-          ref={triangleRef}
-        />
+    <div>
+      <div className="hero-wrapper" ref={containerRef}>
+        <div className="hero-container">
+          <h1 className="header" ref={headerRef}>
+            We Create The Next
+          </h1>
+          <p className="sub" ref={subRef}>
+            You can proceed by scrolling. Or use the button below for a more
+            detailed experience.
+          </p>
+          <img src={triangletrans} alt="triangle" className="triangle-top" />
+          <img src={triangletrans} alt="triangle" className="triangle-left" />
+          <img src={triangletrans} alt="triangle" className="triangle-bottom" />
+          <img
+            src={triangle}
+            alt="triangle"
+            className="triangle-right"
+            ref={triangleRef}
+            onClick={handleSubmit}
+          />
+        </div>
       </div>
     </div>
   );

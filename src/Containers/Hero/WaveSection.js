@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, useLayoutEffect } from "react";
 import { Link } from "react-router-dom";
 import "../../scss/transform.scss";
 import "../../scss/video.scss";
@@ -19,8 +19,11 @@ const WaveSection = ({ handleHover, handleHover2 }) => {
   const handleToggle = () => setIsOn(true);
   const handleToggle2 = () => setIsOn(false);
   const transformRef = useRef();
+  const waveRef = useRef();
   const navRef = useRef();
   const textRef = useRef();
+  const menuRef = useRef();
+  const wavybackRef = useRef();
   const tl2 = useRef();
 
   const toggle = () => {
@@ -30,68 +33,57 @@ const WaveSection = ({ handleHover, handleHover2 }) => {
   useEffect(() => {
     document.addEventListener("mousemove", (event) => {
       const { clientX, clientY } = event;
-      const mouseX = clientX - cursorRef.current.clientWidth / 1.68;
-      const mouseY = clientY - cursorRef.current.clientHeight / 0.52;
+      const mouseX = clientX - cursorRef.current.clientWidth / 1.6;
+      const mouseY = clientY - cursorRef.current.clientHeight / 1.9;
       cursorRef.current.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
     });
   });
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     tl2.current = gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: transformRef.current,
-          start: "top +=200",
-          end: "bottom bottom",
-          scrub: 1,
-
-        },
-      })
-      .add("menu")
-      .add("text")
-      .add("mouse")
+      .timeline
+      //   {
+      //   scrollTrigger: {
+      //     trigger: waveRef.current,
+      //   },
+      // }
+      ()
       .from(
         navRef.current,
         {
           opacity: 0,
         },
-        "menu"
-      )
-      .to(
-        navRef.current,
-        {
-          opacity: 1,
-        },
-        "menu"
+        1.2
       )
       .from(
         textRef.current,
         {
           opacity: 0,
         },
-        "text"
-      )
-      .to(
-        textRef.current,
-        {
-          opacity: 1,
-        },
-        "text"
+        1.2
       )
       .from(
         cursorRef.current,
         {
           opacity: 0,
         },
-        "mouse"
+        1.2
       )
-      .to(
-        cursorRef.current,
+      .from(
+        wavybackRef.current,
         {
-          opacity: 1,
+          opacity: 0,
         },
-        "mouse"
+        1.2
+      )
+      .from(
+        menuRef.current,
+        {
+          opacity: 0,
+        },
+        1.2
       );
+
     // .to(
     //   triangleRef.current,
     //   {
@@ -104,13 +96,14 @@ const WaveSection = ({ handleHover, handleHover2 }) => {
 
   return (
     <>
-      <div className="wave-wrapper">
+      <div className="wave-wrapper" ref={waveRef}>
         <Sidebar isOpen={isOpen} toggle={toggle} />
         <div
           className="menu"
           onClick={toggle}
           onMouseEnter={handleHover}
           onMouseLeave={handleHover2}
+          ref={menuRef}
         />
         <div className="digital-wrapper" ref={transformRef}>
           <div className="radial-cursor" ref={cursorRef} />
@@ -248,7 +241,12 @@ const WaveSection = ({ handleHover, handleHover2 }) => {
           isStopped={false}
           isPaused={false}
         /> */}
-        <img src={svgbackground} alt="background" className="wavy-background" />
+        <img
+          src={svgbackground}
+          alt="background"
+          className="wavy-background"
+          ref={wavybackRef}
+        />
         <img src={background} alt="background" className="wavy-overlay" />
       </div>
     </>

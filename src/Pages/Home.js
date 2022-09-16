@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
-import HeroSection from "../Containers/Hero/HeroSection";
+import React, { useState, useEffect } from "react";
 import CustomCursor from "../components/cursor";
 import WaveSection from "../Containers/Hero/WaveSection";
 import OverviewSection from "../Containers/Hero/OverviewSection";
@@ -10,9 +9,6 @@ import WorkSection from "../Containers/Hero/WorkSection";
 import InsightsSection from "../Containers/Hero/InsightsSection";
 import BottomSection from "../Containers/Hero/BottomSection";
 import FooterSection from "../Containers/Hero/FooterSection";
-import TestSections from "../Containers/Hero/TestSections";
-import TestSection2 from "../Containers/Hero/TestSection2";
-import Overlay from "./Overlay";
 gsap.registerPlugin(ScrollTrigger);
 
 const overlap = () => {
@@ -42,7 +38,6 @@ const Home = () => {
     <>
       <div>
         <CustomCursor isHover={isHover} />
-        <HeroSection />
         <WaveSection
           handleHover={handleHover}
           handleHover2={handleHover2}
