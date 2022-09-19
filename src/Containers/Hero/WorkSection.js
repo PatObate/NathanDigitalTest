@@ -1,6 +1,7 @@
 import React, { useLayoutEffect, useRef } from "react";
 import "../../scss/work.scss";
 import girl from "../../images/WorkSection/girl.png";
+import logo from "../../svgs/TransformSection/LogoLogo.svg";
 import gsap from "gsap";
 
 const WorkSection = () => {
@@ -9,13 +10,13 @@ const WorkSection = () => {
   const x = gsap.utils.selector(workRef);
 
   useLayoutEffect(() => {
-    gsap.to(x(".work-girl"), {
-      rotation: 360,
-      transformOrigin: "center",
-      ease: "none",
-      duration: 60,
-      repeat: -1,
-    });
+    // gsap.to(x(".work-girl"), {
+    //   rotation: 360,
+    //   transformOrigin: "center",
+    //   ease: "none",
+    //   duration: 60,
+    //   repeat: -1,
+    // });
 
     tl5.current = gsap
       .timeline({
@@ -68,7 +69,7 @@ const WorkSection = () => {
       </h1>
       <div className="work-wrapper">
         <div className="work-row">
-          <img src={girl} alt="girl" className="work-girl" />
+          <img src={logo} alt="girl" className="work-girl" />
           <div className="work-bubble1 bubble">#ProductDevelopment</div>
           <div className="work-bubble2 bubble">#CRMImplementation</div>
           <div className="work-bubble3 bubble">#APIintegration</div>

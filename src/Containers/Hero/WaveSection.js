@@ -5,7 +5,7 @@ import "../../scss/transform.scss";
 import "../../scss/video.scss";
 import { ScrollTrigger } from "gsap/all";
 import { gsap } from "gsap";
-import logo from "../../svgs/TransformSection/Logo.svg";
+import logo from "../../svgs/TransformSection/LogoLogo.svg";
 import Sidebar from "../../components/sidebar";
 import { DropDown } from "../../styled-components/TransformElements";
 import svgbackground from "../../svgs/VideoSection/background-wave.svg";
@@ -267,7 +267,6 @@ const WaveSection = ({ handleHover, handleHover2 }) => {
             Software that <br />
             transform your <br />
             business
-
           </h1>
           <div />
         </motion.div>
