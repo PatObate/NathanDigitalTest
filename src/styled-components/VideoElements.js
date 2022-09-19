@@ -26,4 +26,5 @@ export const CrossSign = styled(AiFillCloseCircle)`
   position: absolute;
   top: 3vw;
   right: 3vw;
+  cursor: pointer;
 `;
