@@ -42,10 +42,11 @@ const Home = () => {
         {/* <CustomCursor isHover={isHover} /> */}
         <WaveSection handleHover={handleHover} handleHover2={handleHover2} />
         <OverviewSection />
-        <TrustedSection />
+        <InsightsSection />
+        {/* <TrustedSection /> */}
         <WorkSection />
         {/* <TestSections /> */}
-        <InsightsSection />
+
         <BottomSection />
         <FooterSection />
       </div>

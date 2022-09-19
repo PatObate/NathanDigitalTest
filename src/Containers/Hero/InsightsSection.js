@@ -91,7 +91,7 @@ const InsightsSection = () => {
   return (
     <InsightContainer ref={moduleContainerRef}>
       <InsightHeader className="insight-header">
-        Read our latest insights
+       Our trusted Partners & Clients
       </InsightHeader>
       <InsightTop>
         <InsightSub className="insight-sub">

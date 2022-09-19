@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { AiFillCloseCircle } from "react-icons/ai";
 
 export const VideoBackground = styled.div`
   width: 100%;
@@ -8,7 +8,6 @@ export const VideoBackground = styled.div`
   background: black;
   position: fixed;
   z-index: 12;
-  right: 0;
   bottom: 0;
   transition: 0.3s all ease-in-out;
   display: flex;
@@ -19,4 +18,12 @@ export const VideoBackground = styled.div`
 export const VideoWrapper = styled.video`
   height: 100%;
   width: 100%;
+`;
+
+export const CrossSign = styled(AiFillCloseCircle)`
+  font-size: 3vw;
+  color: #71a2ff;
+  position: absolute;
+  top: 3vw;
+  right: 3vw;
 `;

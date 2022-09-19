@@ -13,6 +13,7 @@ import background from "../../images/VideoSection/gradient-overlay.png";
 import vid from "../../video/Nathan+Digital+Video.mp4";
 import VideoModal from "../../components/video";
 import {
+  CrossSign,
   VideoBackground,
   VideoWrapper,
 } from "../../styled-components/VideoElements";
@@ -44,6 +45,7 @@ const WaveSection = ({ handleHover, handleHover2 }) => {
   const menuRef = useRef();
   const wavybackRef = useRef();
   const tl2 = useRef();
+  const tl2two = useRef();
 
   // var foo = true;
   // if (foo) {
@@ -56,12 +58,56 @@ const WaveSection = ({ handleHover, handleHover2 }) => {
   };
 
   const onClickVid = () => {
-    gsap.to(videoRef.current, {
-      right: 0,
-    });
+    tl2.current = gsap
+      .timeline({})
+      .to(
+        videoRef.current,
+        {
+          right: "0px",
+        },
+        0
+      )
+      .to(
+        videoRef.current,
+        {
+          opacity: 1,
+        },
+        0.8
+      )
+      .to(
+        videoRef.current,
+        {
+          scale: 1,
+        },
+        1.5
+      );
   };
 
-  const onClickLeaveVid = () => {};
+  const onClickLeaveVid = () => {
+    tl2two.current = gsap
+      .timeline({})
+      .to(
+        videoRef.current,
+        {
+          right: "-100vw",
+        },
+        1.5
+      )
+      .to(
+        videoRef.current,
+        {
+          opacity: 0,
+        },
+        0.8
+      )
+      .to(
+        videoRef.current,
+        {
+          scale: 0.7,
+        },
+        0
+      );
+  };
 
   useEffect(() => {
     document.addEventListener("mousemove", (event) => {
@@ -70,12 +116,19 @@ const WaveSection = ({ handleHover, handleHover2 }) => {
       const mouseY = clientY - cursorRef.current.clientHeight / 1.9;
       cursorRef.current.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
     });
+
+    gsap.set(videoRef.current, {
+      opacity: 0,
+      right: "100vw",
+      scale: 0.7,
+    });
   });
 
   return (
     <>
       <div className="wave-wrapper" ref={waveRef}>
-        <VideoBackground>
+        <VideoBackground ref={videoRef}>
+          <CrossSign onClick={onClickLeaveVid} />
           <VideoWrapper controls={true}>
             <source src={vid} type="video/mp4" />
           </VideoWrapper>
@@ -211,9 +264,10 @@ const WaveSection = ({ handleHover, handleHover2 }) => {
             onMouseLeave={handleHover2}
             ref={textRef}
           >
-            Software can <br />
+            Software that <br />
             transform your <br />
             business
+
           </h1>
           <div />
         </motion.div>
