@@ -5,24 +5,49 @@ import { gsap } from "gsap";
 gsap.registerPlugin(ScrollTrigger);
 
 const TestSections = () => {
-  let panels = gsap.utils.toArray(".panel");
-  useEffect(() => {
-    panels.forEach((panel, i) => {
-      ScrollTrigger.create({
-        trigger: panel,
-        start: "top top",
-        pin: i === panels - 1 ? false : true,
-        pinSpacing: false,
+  const testRef = useRef();
+  const rotateEffect = () => {
+    var cards = gsap.utils.toArray(".box"),
+      radius = 520;
+
+    gsap.set(".test-container", {
+      perspective: 900,
+      transformStyle: "preserve-3d",
+    });
+
+    cards.forEach(function (element, index) {
+      gsap.set(element, {
+        rotationY: (index * 360) / cards.length,
+        transformOrigin: "50% 50% " + -radius,
+      });
+      gsap.to(element, {
+        rotationY: "-=150",
+        scrollTrigger: {
+          trigger: testRef.current,
+          start: "top top",
+          end: "+=100%",
+          scrub: 2,
+          pin: testRef.current,
+        },
       });
     });
-  });
+  };
+
+  useEffect(() => {
+    // ScrollTrigger.getById("myId").kill();
+    rotateEffect();
+  }, []);
+
   return (
     <>
-      <div className="panel black">1st section</div>
-      <div className="panel red">2nd section</div>
-      <div className="static blue">static section</div>
-      <div className="static black">static section</div>
-      <div className="static red">static section</div>
+      <div className="container-div" ref={testRef}>
+        <div className="test-container">
+          <div className="box red"></div>
+          <div className="box purple"></div>
+          <div className="box blue"></div>
+          <div className="box green"></div>
+        </div>
+      </div>
     </>
   );
 };

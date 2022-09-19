@@ -1,15 +1,18 @@
 import React from "react";
+import {
+  VideoBackground,
+  VideoWrapper,
+} from "../../styled-components/VideoElements";
+import vid from "../../video/Nathan+Digital+Video.mp4";
 
-import { SidebarClose } from "../../styled-components/SidebarElements";
-import "../../scss/sidebar.scss";
-import { VideoBackground } from "../../styled-components/VideoElements";
-
-const Sidebar = ({ toggle2, isOpen2 }) => {
+const VideoModal = () => {
   return (
-    <VideoBackground toggle={isOpen2} onClick={toggle2}>
-      <SidebarClose onClick={toggle2}>Close</SidebarClose>
+    <VideoBackground>
+      <VideoWrapper controls={true}>
+        <source src={vid} type="video/mp4" />
+      </VideoWrapper>
     </VideoBackground>
   );
 };
 
-export default Sidebar;
+export default VideoModal;

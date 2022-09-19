@@ -11,6 +11,11 @@ import { DropDown } from "../../styled-components/TransformElements";
 import svgbackground from "../../svgs/VideoSection/background-wave.svg";
 import background from "../../images/VideoSection/gradient-overlay.png";
 import vid from "../../video/Nathan+Digital+Video.mp4";
+import VideoModal from "../../components/video";
+import {
+  VideoBackground,
+  VideoWrapper,
+} from "../../styled-components/VideoElements";
 gsap.registerPlugin(ScrollTrigger);
 
 const containerVariants = {
@@ -34,6 +39,7 @@ const WaveSection = ({ handleHover, handleHover2 }) => {
   const transformRef = useRef();
   const waveRef = useRef();
   const navRef = useRef();
+  const videoRef = useRef();
   const textRef = useRef();
   const menuRef = useRef();
   const wavybackRef = useRef();
@@ -48,9 +54,14 @@ const WaveSection = ({ handleHover, handleHover2 }) => {
   const toggle = () => {
     setIsOpen(!isOpen);
   };
-  const toggle2 = () => {
-    setIsOpen2(!isOpen2);
+
+  const onClickVid = () => {
+    gsap.to(videoRef.current, {
+      right: 0,
+    });
   };
+
+  const onClickLeaveVid = () => {};
 
   useEffect(() => {
     document.addEventListener("mousemove", (event) => {
@@ -59,13 +70,16 @@ const WaveSection = ({ handleHover, handleHover2 }) => {
       const mouseY = clientY - cursorRef.current.clientHeight / 1.9;
       cursorRef.current.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
     });
-
-    // JavaScript anonymous function
-  }, []);
+  });
 
   return (
     <>
       <div className="wave-wrapper" ref={waveRef}>
+        <VideoBackground>
+          <VideoWrapper controls={true}>
+            <source src={vid} type="video/mp4" />
+          </VideoWrapper>
+        </VideoBackground>
         <Sidebar isOpen={isOpen} toggle={toggle} />
         <motion.div
           className="menu"
@@ -204,17 +218,24 @@ const WaveSection = ({ handleHover, handleHover2 }) => {
           <div />
         </motion.div>
         <div className="video-container panelsec">
-          <div className="demo-video-wrap">
-            <span className="t_over"></span>
-            <span className="t_over"></span>
-            <span className="t_over"></span>
-            <span className="t_over"></span>
-            <span className="t_over"></span>
-            <span className="t_over"></span>
-            <span className="t_over"></span>
-            <span className="t_over"></span>
-            <span className="t_over"></span>
-            <video className="demo-video" autoPlay={true} muted={true}>
+          <div className="demo-video-wrap" onClick={onClickVid}>
+            <div className="t_over"></div>
+            <div className="t_over"></div>
+            <div className="t_over"></div>
+            <div className="t_over"></div>
+            <div className="t_over">
+              <div className="t_container" />
+            </div>
+            <div className="t_over"></div>
+            <div className="t_over"></div>
+            <div className="t_over"></div>
+            <div className="t_over"></div>
+            <video
+              className="demo-video"
+              autoPlay={true}
+              muted={true}
+              loop={true}
+            >
               <source src={vid} type="video/mp4" />
             </video>
           </div>
@@ -235,11 +256,7 @@ const WaveSection = ({ handleHover, handleHover2 }) => {
           initial="hidden"
           animate="visible"
         />
-        <img
-          src={background}
-          alt="background"
-          className="wavy-overlay"
-        />
+        <img src={background} alt="background" className="wavy-overlay" />
       </div>
     </>
   );

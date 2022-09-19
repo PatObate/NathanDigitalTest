@@ -23,12 +23,11 @@
   height: 100%;
   width: 100%;
   position: relative;
-  background: rgba(0, 0, 0, 0.377);
   transition: all 0.6s ease-out;
   transform: rotateX(0deg) rotateX(0deg);
   perspective: 1000px;
   transform-style: preserve-3d;
-
+  opacity: 0.5;
   &:hover {
     transition: all 0.3s linear;
   }
@@ -39,18 +38,24 @@
   height: 33.333%;
   position: absolute;
   z-index: 1;
+  cursor: pointer;
+}
+
+.t_container {
+  height: 100%;
+  width: 100%;
+  background-image: url("../images/VideoSection/playbutton.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 6vw 6vw;
+  opacity: 1;
 }
 
 .t_over:nth-child(1) {
   left: 0;
   top: 0;
-
-  :hover {
-    .tilt-box {
-      transform: rotateX(-10deg) rotateY(10deg);
-    }
-  }
 }
+
 .t_over:nth-child(2) {
   left: 33.333%;
   top: 0;
@@ -82,6 +87,14 @@
 .t_over:nth-child(9) {
   left: 66.666%;
   top: 66.666%;
+}
+
+.t_over:hover ~ .demo-video {
+  opacity: 1;
+}
+
+.t_over:hover ~ .t_container {
+  opacity: 0;
 }
 
 .t_over:nth-child(1):hover ~ .demo-video {

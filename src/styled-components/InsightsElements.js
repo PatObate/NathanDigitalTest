@@ -60,13 +60,14 @@ export const InsightUl = styled.ul`
 
 export const InsightContent = styled.div`
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
   height: 25vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const InsightCard = styled.div`
+  position: absolute;
   height: 23.18vw;
   width: 44.27vw;
   padding: 4.43vw 5.21vw 1.3vw 19.22vw;
