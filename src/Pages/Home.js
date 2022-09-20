@@ -32,7 +32,7 @@ const Home = () => {
   const handleHover2 = () => setIsHover(false);
 
   useEffect(() => {
-    ScrollTrigger.getById("myId").kill();
+    // ScrollTrigger.getById("myId").kill();
     overlap();
   }, []);
 
