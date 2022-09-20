@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, useLayoutEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import "../../scss/transform.scss";
@@ -11,7 +11,6 @@ import { DropDown } from "../../styled-components/TransformElements";
 import svgbackground from "../../svgs/VideoSection/background-wave.svg";
 import background from "../../images/VideoSection/gradient-overlay.png";
 import vid from "../../video/Nathan+Digital+Video.mp4";
-import VideoModal from "../../components/video";
 import {
   CrossSign,
   VideoBackground,
@@ -46,6 +45,7 @@ const WaveSection = ({ handleHover, handleHover2 }) => {
   const wavybackRef = useRef();
   const tl2 = useRef();
   const tl2two = useRef();
+  const buttonRef = useRef();
 
   // var foo = true;
   // if (foo) {
@@ -55,6 +55,20 @@ const WaveSection = ({ handleHover, handleHover2 }) => {
 
   const toggle = () => {
     setIsOpen(!isOpen);
+  };
+
+  const onHoverVid = () => {
+    gsap.to(buttonRef.current, {
+      opacity: 1,
+      duration: 0.3,
+    });
+  };
+
+  const OnLeaveVid = () => {
+    gsap.to(buttonRef.current, {
+      opacity: 0,
+      duration: 0.3,
+    });
   };
 
   const onClickVid = () => {
@@ -121,6 +135,9 @@ const WaveSection = ({ handleHover, handleHover2 }) => {
       opacity: 0,
       right: "100vw",
       scale: 0.7,
+    });
+    gsap.set(buttonRef.current, {
+      opacity: 0,
     });
   });
 
@@ -270,19 +287,65 @@ const WaveSection = ({ handleHover, handleHover2 }) => {
           </h1>
           <div />
         </motion.div>
-        <div className="video-container panelsec">
-          <div className="demo-video-wrap" onClick={onClickVid}>
-            <div className="t_over"></div>
-            <div className="t_over"></div>
-            <div className="t_over"></div>
-            <div className="t_over"></div>
-            <div className="t_over">
-              <div className="t_container" />
+        <div
+          className="video-container panelsec"
+          onMouseEnter={onHoverVid}
+          onMouseLeave={OnLeaveVid}
+        >
+          <div
+            className="demo-video-wrap"
+            onClick={onClickVid}
+            onMouseEnter={onHoverVid}
+            onMouseLeave={OnLeaveVid}
+          >
+            <div
+              className="t_over"
+              onMouseEnter={onHoverVid}
+              onMouseLeave={OnLeaveVid}
+            ></div>
+            <div
+              className="t_over"
+              onMouseEnter={onHoverVid}
+              onMouseLeave={OnLeaveVid}
+            ></div>
+            <div
+              className="t_over"
+              onMouseEnter={onHoverVid}
+              onMouseLeave={OnLeaveVid}
+            ></div>
+            <div
+              className="t_over"
+              onMouseEnter={onHoverVid}
+              onMouseLeave={OnLeaveVid}
+            ></div>
+            <div
+              className="t_over"
+              onMouseEnter={onHoverVid}
+              onMouseLeave={OnLeaveVid}
+            >
+              {" "}
+              <div className="t_container" ref={buttonRef} />
             </div>
-            <div className="t_over"></div>
-            <div className="t_over"></div>
-            <div className="t_over"></div>
-            <div className="t_over"></div>
+            <div
+              className="t_over"
+              onMouseEnter={onHoverVid}
+              onMouseLeave={OnLeaveVid}
+            ></div>
+            <div
+              className="t_over"
+              onMouseEnter={onHoverVid}
+              onMouseLeave={OnLeaveVid}
+            ></div>
+            <div
+              className="t_over"
+              onMouseEnter={onHoverVid}
+              onMouseLeave={OnLeaveVid}
+            ></div>
+            <div
+              className="t_over"
+              onMouseEnter={onHoverVid}
+              onMouseLeave={OnLeaveVid}
+            ></div>
             <video
               className="demo-video"
               autoPlay={true}

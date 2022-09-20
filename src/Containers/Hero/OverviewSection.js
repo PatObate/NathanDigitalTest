@@ -25,17 +25,14 @@ const OverviewSection = () => {
   const overviewRef = useRef();
   const overHeaderRef = useRef();
   const tl4 = useRef();
+  const tl4Trigger = useRef();
   const a = gsap.utils.selector(overviewRef);
-
-  const onEnter = () => {
-    gsap.to(cardRef.current, { y: 0, opacity: 1 });
-  };
-
-  const onLeave = () => {
-    gsap.to(cardRef.current, { y: 200, opacity: 0 });
-  };
-
   useLayoutEffect(() => {
+    gsap.set(a(".overview-card"), {
+      y: 100,
+      opacity: 0,
+    });
+
     tl4.current = gsap
       .timeline({
         scrollTrigger: {
@@ -45,56 +42,178 @@ const OverviewSection = () => {
       })
       .from(a(".overview-header"), {
         x: -100,
-        duration: 0.3,
         opacity: 0,
       })
       .from(a(".overview-menu"), {
         x: -100,
-        duration: 0.3,
-        opacity: 0,
-      })
-      .from(a(".overview-card"), {
-        y: 200,
-        duration: 0.3,
         opacity: 0,
       });
-  }, []);
+
+    tl4Trigger.current = gsap.timeline({
+      scrollTrigger: {
+        trigger: overviewRef.current,
+        start: "top top",
+        end: "+=3000px",
+        scrub: 4,
+        pin: true,
+        snap: {
+          snapTo: "labels",
+          duration: { min: 0.2, max: 0.2 },
+          delay: 0.1,
+        },
+      },
+    });
+
+    tl4Trigger.current
+      .addLabel("start")
+      .to(
+        a(".li-1"),
+        {
+          color: "#71a2ff",
+        },
+        0
+      )
+      .to(
+        a(".overview-card"),
+        {
+          y: 0,
+          opacity: 1,
+        },
+        0
+      )
+      .addLabel("start2")
+      .to(
+        a(".overview-card"),
+        {
+          y: 100,
+          opacity: 0,
+        },
+        1
+      )
+      .to(
+        a(".li-1"),
+        {
+          color: "#fff",
+        },
+        1
+      )
+      .addLabel("start3")
+      .to(
+        a(".li-2"),
+        {
+          color: "#71a2ff",
+        },
+        2
+      )
+      .to(
+        a(".overview-card"),
+        {
+          y: 0,
+          opacity: 1,
+        },
+        2
+      )
+      .addLabel("start4")
+      .to(
+        a(".overview-card"),
+        {
+          y: 100,
+          opacity: 0,
+        },
+        3
+      )
+      .to(
+        a(".li-2"),
+        {
+          color: "#fff",
+        },
+        3
+      )
+      .addLabel("start5")
+      .to(
+        a(".li-3"),
+        {
+          color: "#71a2ff",
+        },
+        4
+      )
+      .to(
+        a(".overview-card"),
+        {
+          y: 0,
+          opacity: 1,
+        },
+        4
+      )
+      .addLabel("start6")
+      .to(
+        a(".overview-card"),
+        {
+          y: 100,
+          opacity: 0,
+        },
+        5
+      )
+      .to(
+        a(".li-3"),
+        {
+          color: "#fff",
+        },
+        5
+      )
+      .addLabel("start7")
+      .to(
+        a(".li-4"),
+        {
+          color: "#71a2ff",
+        },
+        6
+      )
+      .to(
+        a(".overview-card"),
+        {
+          y: 0,
+          opacity: 1,
+        },
+        6
+      )
+      .addLabel("start8")
+      .to(
+        a(".overview-card"),
+        {
+          y: 100,
+          opacity: 0,
+        },
+        7
+      )
+      .to(
+        a(".li-4"),
+        {
+          color: "#fff",
+        },
+        7
+      );
+  });
 
   return (
     <OverviewContainer ref={overviewRef}>
       <OverviewHeader className="overview-header">
-        Our Product
+        Our Product.
         <br />
-        Overview
+        Overview.
       </OverviewHeader>
       <OverviewContent>
         <OverviewMenu className="overview-menu">
           <ul>
-            <li onClick={onEnter}>SUPPLY CHAIN MANAGEMENT</li>
-            <li onMouseEnter={onEnter} onMouseLeave={onLeave}>
-              CRM and Customer Experience
-            </li>
-            <li onMouseEnter={onEnter} onMouseLeave={onLeave}>
-              Financial Management
-            </li>
-            <li onMouseEnter={onEnter} onMouseLeave={onLeave}>
-              Business Technology Platform
-            </li>
-            <li onMouseEnter={onEnter} onMouseLeave={onLeave}>
-              Spend Management
-            </li>
-            <li onMouseEnter={onEnter} onMouseLeave={onLeave}>
-              Human Capital
-            </li>
-            <li onMouseEnter={onEnter} onMouseLeave={onLeave}>
-              Workflow Automation
-            </li>
-            <li onMouseEnter={onEnter} onMouseLeave={onLeave}>
-              Performance
-            </li>
-            <li onMouseEnter={onEnter} onMouseLeave={onLeave}>
-              Task Management
-            </li>
+            <li className="li-1">SUPPLY CHAIN MANAGEMENT</li>
+            <li className="li-2">CRM and Customer Experience</li>
+            <li className="li-3">Financial Management</li>
+            <li className="li-4">Business Technology Platform</li>
+            <li>Spend Management</li>
+            <li>Human Capital</li>
+            <li>Workflow Automation</li>
+            <li>Performance</li>
+            <li>Task Management</li>
           </ul>
         </OverviewMenu>
         <OverviewCard className="overview-card" ref={cardRef}>

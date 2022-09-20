@@ -34,7 +34,7 @@ const HeroSection = () => {
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top top",
-          end: "+=400",
+          end: "+=100%",
           onLeave: handleSubmit,
           pin: true,
           id: "myId",
