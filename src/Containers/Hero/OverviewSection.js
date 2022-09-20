@@ -54,7 +54,7 @@ const OverviewSection = () => {
         trigger: overviewRef.current,
         start: "top top",
         end: "+=3000px",
-        scrub: 4,
+        scrub: 5,
         pin: true,
         snap: {
           snapTo: "labels",
