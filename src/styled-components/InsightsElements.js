@@ -31,11 +31,13 @@ export const InsightSub = styled.p`
 `;
 
 export const CardWrapper = styled.div`
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 50vw;
+  height: 23.18vw;
+  background: #050215;
+  position: absolute;
 `;
 
 export const InsightTop = styled.div`
@@ -60,10 +62,10 @@ export const InsightUl = styled.ul`
 
 export const InsightContent = styled.div`
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
   height: 25vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const InsightCard = styled.div`

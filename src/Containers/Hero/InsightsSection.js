@@ -24,99 +24,35 @@ const InsightsSection = () => {
   const moduleContainerRef = useRef();
   const z = gsap.utils.selector(moduleContainerRef);
 
-  // const rotateInsightEffect = () => {
-  //   var cards = gsap.utils.toArray(".insight-card"),
-  //     radius = 520;
+  const rotateInsightEffect = () => {
+    var cards = gsap.utils.toArray(".insight-card"),
+      radius = -1700;
 
-  //   gsap.set(containerRef.current, {
-  //     perspective: 900,
-  //     transformStyle: "preserve-3d",
-  //   });
+    gsap.set(containerRef.current, {
+      perspective: 1100,
+      transformStyle: "preserve-3d",
+    });
 
-  //   cards.forEach(function (element, index) {
-  //     gsap.set(element, {
-  //       rotationY: (index * 360) / cards.length,
-  //       transformOrigin: "50% 50% " + -radius,
-  //     });
-  //     gsap.to(element, {
-  //       rotationY: "-=150",
-  //       scrollTrigger: {
-  //         trigger: moduleContainerRef.current,
-  //         start: "top top",
-  //         end: "+=100%",
-  //         scrub: 2,
-  //         pin: true,
-  //       },
-  //     });
-  //   });
-  // };
+    cards.forEach(function (element, index) {
+      gsap.set(element, {
+        rotationY: (index * 180) / cards.length,
+        transformOrigin: "50% 50% " + -radius,
+      });
+      gsap.to(element, {
+        rotationY: "-=150",
+        scrollTrigger: {
+          trigger: moduleContainerRef.current,
+          start: "top top",
+          end: "+=3000",
+          scrub: 2,
+          pin: true,
+        },
+      });
+    });
+  };
 
   useLayoutEffect(() => {
-    // rotateInsightEffect();
-
-    let scrollTween = gsap.to(containerRef.current, {
-      x: () =>
-        -(
-          containerRef.current.scrollWidth -
-          document.documentElement.clientWidth
-        ) + "px",
-      ease: "none",
-      scrollTrigger: {
-        trigger: moduleContainerRef.current,
-        invalidateOnRefresh: true,
-        pin: true,
-        scrub: 1,
-        end: () => "+=" + containerRef.current.offsetWidth,
-      },
-    });
-
-    gsap.to(z(".card-1"), {
-      rotateY: 40,
-      scrollTrigger: {
-        trigger: z(".card-1"),
-        containerAnimation: scrollTween,
-        scrub: 2,
-        start: "start",
-      },
-    });
-
-    gsap.to(z(".card-2"), {
-      rotateY: 40,
-      scrollTrigger: {
-        trigger: z(".card-2"),
-        containerAnimation: scrollTween,
-        scrub: 2,
-        start: "start",
-      },
-    });
-    gsap.to(z(".card-3"), {
-      rotateY: -40,
-      scrollTrigger: {
-        trigger: containerRef.current,
-        containerAnimation: scrollTween,
-        scrub: 2,
-        start: "end",
-        markers: true,
-      },
-    });
-    gsap.from(z(".card-3"), {
-      rotateY: 40,
-      scrollTrigger: {
-        trigger: z(".card-3"),
-        containerAnimation: scrollTween,
-        scrub: 2,
-        start: "start",
-      },
-    });
-    gsap.to(z(".card-4"), {
-      rotateY: 40,
-      scrollTrigger: {
-        trigger: z(".card-4"),
-        containerAnimation: scrollTween,
-        scrub: 2,
-        start: "start",
-      },
-    });
+    rotateInsightEffect();
 
     tl5.current = gsap
       .timeline({
@@ -135,6 +71,22 @@ const InsightsSection = () => {
         duration: 0.3,
         opacity: 0,
       });
+
+    // gsap.to(containerRef.current, {
+    //   x: () =>
+    //     -(
+    //       containerRef.current.scrollWidth -
+    //       document.documentElement.clientWidth
+    //     ) + "px",
+    //   ease: "none",
+    //   scrollTrigger: {
+    //     trigger: moduleContainerRef.current,
+    //     invalidateOnRefresh: true,
+    //     pin: true,
+    //     scrub: 1,
+    //     end: () => "+=" + containerRef.current.offsetWidth,
+    //   },
+    // });
   });
   return (
     <InsightContainer ref={moduleContainerRef}>
@@ -143,7 +95,7 @@ const InsightsSection = () => {
       </InsightHeader>
       <InsightTop>
         <InsightSub className="insight-sub">
-          Lead Source shares its expertise and experience on a <br />
+          LeedSource shares its expertise and experience on a <br />
           regular basis, no subscription fee required.
         </InsightSub>
         <InsightUl>
@@ -155,8 +107,8 @@ const InsightsSection = () => {
         </InsightUl>
       </InsightTop>
       <InsightContent ref={containerRef}>
-        <CardWrapper>
-          <InsightCard className="card-1">
+        <CardWrapper className="insight-card">
+          <InsightCard>
             <img src={ikea} alt="ikea-logo" />
             <h2>
               Trusted experts. Proven <br />
@@ -169,8 +121,8 @@ const InsightsSection = () => {
             <button>Read More</button>
           </InsightCard>
         </CardWrapper>
-        <CardWrapper>
-          <InsightCard alt="true" className="card-2">
+        <CardWrapper className="insight-card">
+          <InsightCard alt="true">
             <img src={delong} alt="delonghi-logo" />
             <h2>
               Trusted experts. Proven <br />
@@ -183,8 +135,8 @@ const InsightsSection = () => {
             <button>Read More</button>
           </InsightCard>
         </CardWrapper>
-        <CardWrapper>
-          <InsightCard className="card-3">
+        <CardWrapper className="insight-card">
+          <InsightCard>
             <img src={ikea} alt="ikea-logo" />
             <h2>
               Trusted experts. Proven <br />
@@ -197,8 +149,8 @@ const InsightsSection = () => {
             <button>Read More</button>
           </InsightCard>
         </CardWrapper>
-        <CardWrapper>
-          <InsightCard alt="true" className="card-4">
+        <CardWrapper className="insight-card">
+          <InsightCard alt="true">
             <img src={delong} alt="delonghi-logo" />
             <h2>
               Trusted experts. Proven <br />
@@ -211,8 +163,34 @@ const InsightsSection = () => {
             <button>Read More</button>
           </InsightCard>
         </CardWrapper>
-        <CardWrapper />
-        <CardWrapper />
+        <CardWrapper className="insight-card">
+          <InsightCard>
+            <img src={ikea} alt="ikea-logo" />
+            <h2>
+              Trusted experts. Proven <br />
+              results.
+            </h2>
+            <p>
+              Our large network of UAE lenders includes established <br />
+              and trusted brands includes government entities.
+            </p>
+            <button>Read More</button>
+          </InsightCard>
+        </CardWrapper>
+        <CardWrapper className="insight-card">
+          <InsightCard alt="true">
+            <img src={delong} alt="delonghi-logo" />
+            <h2>
+              Trusted experts. Proven <br />
+              results.
+            </h2>
+            <p>
+              Our large network of UAE lenders includes established <br />
+              and trusted brands includes government entities.
+            </p>
+            <button>Read More</button>
+          </InsightCard>
+        </CardWrapper>
       </InsightContent>
     </InsightContainer>
   );
