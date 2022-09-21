@@ -2,15 +2,16 @@ import styled from "styled-components";
 
 export const OverviewContainer = styled.div`
   width: 100%;
-  height: 100%;
+  height: 100vh;
   padding: 5.21vw 7.24vw;
-  background: #0c0820;
+  background: #09011b;
   z-index: 2;
   position: relative;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   flex-direction: column;
+  overflow: hidden;
 `;
 
 export const OverviewHeader = styled.h1`
@@ -70,7 +71,7 @@ export const OverviewCard = styled.div`
     position: absolute;
     top: 0vw;
     left: 0vw;
-    background: transparent linear-gradient(1deg, #05030f 0%, #09011c05 100%) 0%
+    background: transparent linear-gradient(0deg, #171629 0%, #09011c00 100%) 0%
       0% no-repeat padding-box;
   }
 `;

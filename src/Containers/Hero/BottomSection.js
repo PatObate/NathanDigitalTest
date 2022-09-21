@@ -45,7 +45,7 @@ const BottomSection = () => {
 
   return (
     <div className="bottom-container">
-      <div>
+      <div className="bottom-background">
         <h1 className="bottom-header">
           Step up to a cutting-edge <br />
           SAS experience with Nathan Digital. <br />

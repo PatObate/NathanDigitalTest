@@ -1,7 +1,5 @@
 import React, { useLayoutEffect, useRef } from "react";
 import "../../scss/work.scss";
-import girl from "../../images/WorkSection/girl.png";
-import logo from "../../svgs/TransformSection/LogoLogo.svg";
 import gsap from "gsap";
 
 const WorkSection = () => {
@@ -69,13 +67,18 @@ const WorkSection = () => {
       </h1>
       <div className="work-wrapper">
         <div className="work-row">
-          <img src={logo} alt="girl" className="work-girl" />
-          <div className="work-bubble1 bubble">#ProductDevelopment</div>
-          <div className="work-bubble2 bubble">#CRMImplementation</div>
-          <div className="work-bubble3 bubble">#APIintegration</div>
-          <div className="work-bubble4 bubble">#APIintegration</div>
-          <div className="work-bubble5 bubble">#HRAnalytics</div>
-          <div className="work-bubble6 bubble">#DataArtificialIntelligence</div>
+          {/* <img src={logo} alt="girl" className="work-girl" />
+           */}
+          <div className="work-circle-outer" />
+          <div className="work-circle-inner" />
+          <div className="work-icon" />
+          <div className="work-window" />
+          <div className="work-cloud" />
+          <div className="work-aws" />
+          <div className="work-fox" />
+          <div className="work-math" />
+          <div className="work-man" />
+          <div className="work-client" />
         </div>
         <div className="work-row2">
           <h2 className="work-h2">What we do</h2>
@@ -83,10 +86,16 @@ const WorkSection = () => {
             Trusted experts. Proven <br />
             results.
           </h1>
-          <p className="work-p">
-            Our large network of UAE lenders includes established <br />
-            and trusted brands includes government entities.
-          </p>
+          <div className="bubble-container">
+            <div className="work-bubble1 bubble">#ProductDevelopment</div>
+            <div className="work-bubble2 bubble">#CRMImplementation</div>
+            <div className="work-bubble3 bubble">#APIintegration</div>
+            <div className="work-bubble4 bubble">#APIintegration</div>
+            <div className="work-bubble5 bubble">#HRAnalytics</div>
+            <div className="work-bubble6 bubble">
+              #DataArtificialIntelligence
+            </div>
+          </div>
           <button className="work-button">Contact Us</button>
         </div>
       </div>

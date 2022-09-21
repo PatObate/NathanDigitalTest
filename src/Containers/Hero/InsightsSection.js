@@ -11,11 +11,14 @@ import {
   InsightTop,
   InsightUl,
   CardWrapper,
+  CardWrapperStart,
 } from "../../styled-components/InsightsElements";
 import { ScrollTrigger } from "gsap/all";
 import { gsap } from "gsap";
 import ikea from "../../images/TrustedSection/ikea.png";
 import delong from "../../images/TrustedSection/delonghi.png";
+import adq from "../../images/TrustedSection/adqwhite.png";
+import mumz from "../../images/TrustedSection/mumzworld.png";
 gsap.registerPlugin(ScrollTrigger);
 
 const InsightsSection = () => {
@@ -24,35 +27,91 @@ const InsightsSection = () => {
   const moduleContainerRef = useRef();
   const z = gsap.utils.selector(moduleContainerRef);
 
-  const rotateInsightEffect = () => {
-    var cards = gsap.utils.toArray(".insight-card"),
-      radius = -1700;
+  // const rotateInsightEffect = () => {
+  //   var cards = gsap.utils.toArray(".insight-card"),
+  //     radius = 520;
 
-    gsap.set(containerRef.current, {
-      perspective: 1100,
-      transformStyle: "preserve-3d",
-    });
+  //   gsap.set(containerRef.current, {
+  //     perspective: 900,
+  //     transformStyle: "preserve-3d",
+  //   });
 
-    cards.forEach(function (element, index) {
-      gsap.set(element, {
-        rotationY: (index * 180) / cards.length,
-        transformOrigin: "50% 50% " + -radius,
-      });
-      gsap.to(element, {
-        rotationY: "-=150",
-        scrollTrigger: {
-          trigger: moduleContainerRef.current,
-          start: "top top",
-          end: "+=3000",
-          scrub: 2,
-          pin: true,
-        },
-      });
-    });
-  };
+  //   cards.forEach(function (element, index) {
+  //     gsap.set(element, {
+  //       rotationY: (index * 360) / cards.length,
+  //       transformOrigin: "50% 50% " + -radius,
+  //     });
+  //     gsap.to(element, {
+  //       rotationY: "-=150",
+  //       scrollTrigger: {
+  //         trigger: moduleContainerRef.current,
+  //         start: "top top",
+  //         end: "+=100%",
+  //         scrub: 2,
+  //         pin: true,
+  //       },
+  //     });
+  //   });
+  // };
 
   useLayoutEffect(() => {
-    rotateInsightEffect();
+    // rotateInsightEffect();
+
+    let scrollTween = gsap.to(containerRef.current, {
+      x: () =>
+        -(
+          containerRef.current.scrollWidth -
+          document.documentElement.clientWidth
+        ) + "px",
+      ease: "none",
+      scrollTrigger: {
+        trigger: moduleContainerRef.current,
+        invalidateOnRefresh: true,
+        pin: true,
+        scrub: 1,
+        end: () => "+=" + containerRef.current.offsetWidth,
+      },
+    });
+
+    // gsap.to(z(".card-1"), {
+    //   rotateY: 40,
+    //   scrollTrigger: {
+    //     trigger: z(".card-1"),
+    //     containerAnimation: scrollTween,
+    //     scrub: 2,
+    //     start: "start",
+    //   },
+    // });
+
+    // gsap.to(z(".card-2"), {
+    //   rotateY: 40,
+    //   scrollTrigger: {
+    //     trigger: z(".card-2"),
+    //     containerAnimation: scrollTween,
+    //     scrub: 2,
+    //     start: "start",
+    //   },
+    // });
+
+    // gsap.to(z(".card-3"), {
+    //   rotateY: 40,
+    //   scrollTrigger: {
+    //     trigger: z(".card-3"),
+    //     containerAnimation: scrollTween,
+    //     scrub: 2,
+    //     start: "start",
+    //   },
+    // });
+
+    // gsap.to(z(".card-4"), {
+    //   rotateY: 40,
+    //   scrollTrigger: {
+    //     trigger: z(".card-4"),
+    //     containerAnimation: scrollTween,
+    //     scrub: 2,
+    //     start: "start",
+    //   },
+    // });
 
     tl5.current = gsap
       .timeline({
@@ -71,58 +130,33 @@ const InsightsSection = () => {
         duration: 0.3,
         opacity: 0,
       });
-
-    // gsap.to(containerRef.current, {
-    //   x: () =>
-    //     -(
-    //       containerRef.current.scrollWidth -
-    //       document.documentElement.clientWidth
-    //     ) + "px",
-    //   ease: "none",
-    //   scrollTrigger: {
-    //     trigger: moduleContainerRef.current,
-    //     invalidateOnRefresh: true,
-    //     pin: true,
-    //     scrub: 1,
-    //     end: () => "+=" + containerRef.current.offsetWidth,
-    //   },
-    // });
   });
   return (
     <InsightContainer ref={moduleContainerRef}>
       <InsightHeader className="insight-header">
         Our trusted Partners & Clients
       </InsightHeader>
-      <InsightTop>
-        <InsightSub className="insight-sub">
-          LeedSource shares its expertise and experience on a <br />
-          regular basis, no subscription fee required.
-        </InsightSub>
-        <InsightUl>
-          <li>ALL</li>
-          <li>IKEA Middle East</li>
-          <li>Porsche Middle East</li>
-          <li>Delonghi</li>
-          <li>ADQ</li>
-        </InsightUl>
-      </InsightTop>
+      <InsightSub className="insight-sub">
+        Lead Source shares its expertise and experience on a <br />
+        regular basis, no subscription fee required.
+      </InsightSub>
       <InsightContent ref={containerRef}>
-        <CardWrapper className="insight-card">
-          <InsightCard>
+        <CardWrapperStart />
+        <CardWrapper>
+          <InsightCard className="card-1">
             <img src={ikea} alt="ikea-logo" />
             <h2>
-              Trusted experts. Proven <br />
-              results.
+              Enabled HRMS Enhancement <br />
+              solutions for UAE sector
             </h2>
             <p>
               Our large network of UAE lenders includes established <br />
               and trusted brands includes government entities.
             </p>
-            <button>Read More</button>
           </InsightCard>
         </CardWrapper>
-        <CardWrapper className="insight-card">
-          <InsightCard alt="true">
+        <CardWrapper>
+          <InsightCard alt="true" className="card-2">
             <img src={delong} alt="delonghi-logo" />
             <h2>
               Trusted experts. Proven <br />
@@ -132,12 +166,11 @@ const InsightsSection = () => {
               Our large network of UAE lenders includes established <br />
               and trusted brands includes government entities.
             </p>
-            <button>Read More</button>
           </InsightCard>
         </CardWrapper>
-        <CardWrapper className="insight-card">
-          <InsightCard>
-            <img src={ikea} alt="ikea-logo" />
+        <CardWrapper>
+          <InsightCard className="card-3">
+            <img src={adq} alt="adq-logo" />
             <h2>
               Trusted experts. Proven <br />
               results.
@@ -146,12 +179,11 @@ const InsightsSection = () => {
               Our large network of UAE lenders includes established <br />
               and trusted brands includes government entities.
             </p>
-            <button>Read More</button>
           </InsightCard>
         </CardWrapper>
-        <CardWrapper className="insight-card">
-          <InsightCard alt="true">
-            <img src={delong} alt="delonghi-logo" />
+        <CardWrapper>
+          <InsightCard alt="true" className="card-4">
+            <img src={mumz} alt="mumz-logo" />
             <h2>
               Trusted experts. Proven <br />
               results.
@@ -160,35 +192,6 @@ const InsightsSection = () => {
               Our large network of UAE lenders includes established <br />
               and trusted brands includes government entities.
             </p>
-            <button>Read More</button>
-          </InsightCard>
-        </CardWrapper>
-        <CardWrapper className="insight-card">
-          <InsightCard>
-            <img src={ikea} alt="ikea-logo" />
-            <h2>
-              Trusted experts. Proven <br />
-              results.
-            </h2>
-            <p>
-              Our large network of UAE lenders includes established <br />
-              and trusted brands includes government entities.
-            </p>
-            <button>Read More</button>
-          </InsightCard>
-        </CardWrapper>
-        <CardWrapper className="insight-card">
-          <InsightCard alt="true">
-            <img src={delong} alt="delonghi-logo" />
-            <h2>
-              Trusted experts. Proven <br />
-              results.
-            </h2>
-            <p>
-              Our large network of UAE lenders includes established <br />
-              and trusted brands includes government entities.
-            </p>
-            <button>Read More</button>
           </InsightCard>
         </CardWrapper>
       </InsightContent>
