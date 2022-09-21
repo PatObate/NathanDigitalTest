@@ -31,11 +31,13 @@ export const InsightSub = styled.p`
 `;
 
 export const CardWrapper = styled.div`
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 50vw;
+  height: 23.18vw;
+  background: #050215;
+  position: absolute;
 `;
 
 export const InsightTop = styled.div`
@@ -67,7 +69,6 @@ export const InsightContent = styled.div`
 `;
 
 export const InsightCard = styled.div`
-  position: absolute;
   height: 23.18vw;
   width: 44.27vw;
   padding: 4.43vw 5.21vw 1.3vw 19.22vw;
@@ -82,13 +83,11 @@ export const InsightCard = styled.div`
   background-position: 10vw left;
   background-size: 16vw 23.18vw;
   background-repeat: no-repeat;
-
   img {
     height: 3vw;
     width: auto;
     display: block;
   }
-
   button {
     height: 2.97vw;
     width: 9.38vw;
@@ -99,7 +98,6 @@ export const InsightCard = styled.div`
     background: #71a2ff;
     border: none;
   }
-
   h2 {
     font-size: 1.82vw;
     font-weight: 600;
@@ -108,7 +106,6 @@ export const InsightCard = styled.div`
     line-height: 1.98vw;
     margin: 0vw;
   }
-
   p {
     font-size: 0.83vw;
     font-weight: 300;

@@ -26,16 +26,16 @@ const InsightsSection = () => {
 
   const rotateInsightEffect = () => {
     var cards = gsap.utils.toArray(".insight-card"),
-      radius = 520;
+      radius = -1700;
 
     gsap.set(containerRef.current, {
-      perspective: 900,
+      perspective: 1100,
       transformStyle: "preserve-3d",
     });
 
     cards.forEach(function (element, index) {
       gsap.set(element, {
-        rotationY: (index * 360) / cards.length,
+        rotationY: (index * 180) / cards.length,
         transformOrigin: "50% 50% " + -radius,
       });
       gsap.to(element, {
@@ -43,7 +43,7 @@ const InsightsSection = () => {
         scrollTrigger: {
           trigger: moduleContainerRef.current,
           start: "top top",
-          end: "+=100%",
+          end: "+=3000",
           scrub: 2,
           pin: true,
         },
@@ -53,7 +53,7 @@ const InsightsSection = () => {
 
   useLayoutEffect(() => {
     rotateInsightEffect();
-    
+
     tl5.current = gsap
       .timeline({
         scrollTrigger: {
@@ -91,7 +91,7 @@ const InsightsSection = () => {
   return (
     <InsightContainer ref={moduleContainerRef}>
       <InsightHeader className="insight-header">
-       Our trusted Partners & Clients
+        Our trusted Partners & Clients
       </InsightHeader>
       <InsightTop>
         <InsightSub className="insight-sub">
@@ -107,62 +107,90 @@ const InsightsSection = () => {
         </InsightUl>
       </InsightTop>
       <InsightContent ref={containerRef}>
-        {/* <CardWrapper> */}
-        <InsightCard className="insight-card">
-          <img src={ikea} alt="ikea-logo" />
-          <h2>
-            Trusted experts. Proven <br />
-            results.
-          </h2>
-          <p>
-            Our large network of UAE lenders includes established <br />
-            and trusted brands includes government entities.
-          </p>
-          <button>Read More</button>
-        </InsightCard>
-        {/* </CardWrapper> */}
-        {/* <CardWrapper> */}
-        <InsightCard alt="true" className="insight-card">
-          <img src={delong} alt="delonghi-logo" />
-          <h2>
-            Trusted experts. Proven <br />
-            results.
-          </h2>
-          <p>
-            Our large network of UAE lenders includes established <br />
-            and trusted brands includes government entities.
-          </p>
-          <button>Read More</button>
-        </InsightCard>
-        {/* </CardWrapper> */}
-        {/* <CardWrapper> */}
-        <InsightCard className="insight-card">
-          <img src={ikea} alt="ikea-logo" />
-          <h2>
-            Trusted experts. Proven <br />
-            results.
-          </h2>
-          <p>
-            Our large network of UAE lenders includes established <br />
-            and trusted brands includes government entities.
-          </p>
-          <button>Read More</button>
-        </InsightCard>
-        {/* </CardWrapper> */}
-        {/* <CardWrapper> */}
-        <InsightCard alt="true" className="insight-card">
-          <img src={delong} alt="delonghi-logo" />
-          <h2>
-            Trusted experts. Proven <br />
-            results.
-          </h2>
-          <p>
-            Our large network of UAE lenders includes established <br />
-            and trusted brands includes government entities.
-          </p>
-          <button>Read More</button>
-        </InsightCard>
-        {/* </CardWrapper> */}
+        <CardWrapper className="insight-card">
+          <InsightCard>
+            <img src={ikea} alt="ikea-logo" />
+            <h2>
+              Trusted experts. Proven <br />
+              results.
+            </h2>
+            <p>
+              Our large network of UAE lenders includes established <br />
+              and trusted brands includes government entities.
+            </p>
+            <button>Read More</button>
+          </InsightCard>
+        </CardWrapper>
+        <CardWrapper className="insight-card">
+          <InsightCard alt="true">
+            <img src={delong} alt="delonghi-logo" />
+            <h2>
+              Trusted experts. Proven <br />
+              results.
+            </h2>
+            <p>
+              Our large network of UAE lenders includes established <br />
+              and trusted brands includes government entities.
+            </p>
+            <button>Read More</button>
+          </InsightCard>
+        </CardWrapper>
+        <CardWrapper className="insight-card">
+          <InsightCard>
+            <img src={ikea} alt="ikea-logo" />
+            <h2>
+              Trusted experts. Proven <br />
+              results.
+            </h2>
+            <p>
+              Our large network of UAE lenders includes established <br />
+              and trusted brands includes government entities.
+            </p>
+            <button>Read More</button>
+          </InsightCard>
+        </CardWrapper>
+        <CardWrapper className="insight-card">
+          <InsightCard alt="true">
+            <img src={delong} alt="delonghi-logo" />
+            <h2>
+              Trusted experts. Proven <br />
+              results.
+            </h2>
+            <p>
+              Our large network of UAE lenders includes established <br />
+              and trusted brands includes government entities.
+            </p>
+            <button>Read More</button>
+          </InsightCard>
+        </CardWrapper>
+        <CardWrapper className="insight-card">
+          <InsightCard>
+            <img src={ikea} alt="ikea-logo" />
+            <h2>
+              Trusted experts. Proven <br />
+              results.
+            </h2>
+            <p>
+              Our large network of UAE lenders includes established <br />
+              and trusted brands includes government entities.
+            </p>
+            <button>Read More</button>
+          </InsightCard>
+        </CardWrapper>
+        <CardWrapper className="insight-card">
+          <InsightCard alt="true">
+            <img src={delong} alt="delonghi-logo" />
+            <h2>
+              Trusted experts. Proven <br />
+              results.
+            </h2>
+            <p>
+              Our large network of UAE lenders includes established <br />
+              and trusted brands includes government entities.
+            </p>
+            <button>Read More</button>
+          </InsightCard>
+        </CardWrapper>
       </InsightContent>
     </InsightContainer>
   );
