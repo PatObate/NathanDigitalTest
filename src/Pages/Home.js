@@ -11,6 +11,7 @@ import BottomSection from "../Containers/Hero/BottomSection";
 import FooterSection from "../Containers/Hero/FooterSection";
 import TestSections from "../Containers/Hero/TestSections";
 import TestSection3 from "../Containers/Hero/TestSection3";
+import BlogSection from "../Containers/Hero/BlogSection";
 gsap.registerPlugin(ScrollTrigger);
 
 const overlap = () => {
@@ -47,6 +48,7 @@ const Home = () => {
         {/* <TrustedSection /> */}
         <WorkSection />
         {/* <TestSections /> */}
+        <BlogSection />
         <BottomSection />
         <FooterSection />
         {/* <TestSection3 /> */}

@@ -2,7 +2,7 @@
   height: 200vh;
   overflow: hidden;
   width: 100%;
-  background: #09011c;
+  background: #030517;
   position: relative;
   z-index: 1;
 }
@@ -15,7 +15,7 @@
   align-items: flex-start;
   flex-direction: column;
   justify-content: space-between;
-  padding: 3vw 7.24vw;
+  padding: 0vw 7.24vw;
   z-index: 1;
 }
 
@@ -59,7 +59,7 @@
   align-items: flex-start;
   justify-content: space-between;
   width: 4vw;
-  margin-bottom: 2.32vw;
+  margin-bottom: 83px;
   z-index: 2;
   position: relative;
 }
@@ -68,6 +68,7 @@
   font-weight: 100;
   color: white;
   font-size: 1.04vw;
+  margin: 21px 0px 0px 0px;
 }
 
 .navigation-wrapper {
@@ -89,7 +90,7 @@
   color: white;
   font-size: 0.94vw;
   letter-spacing: 0.1vw;
-  margin-left: 10vw;
+  margin-left: 4vw;
   position: relative;
   text-decoration: underline;
   text-underline-position: under;
@@ -105,10 +106,10 @@
   &::before {
     content: "";
     display: block;
-    width: 4.17vw;
+    width: 3vw;
     height: 0.03vw;
     background: white;
-    left: -5vw;
+    left: -4vw;
     top: 30%;
     position: absolute;
     transition: 0.3s all ease-in-out !important;
@@ -161,7 +162,7 @@
   transform: translate3d(0, 0, 0);
   position: fixed;
   z-index: 0;
-  background: radial-gradient(circle, #180746, rgba(0, 0, 0, 1) 100%);
+  background: radial-gradient(circle, #050933, rgba(0, 0, 0, 1) 100%);
   filter: blur(9rem);
 }
 

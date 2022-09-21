@@ -7,7 +7,7 @@ export const InsightContainer = styled.div`
   width: 100%;
   position: relative;
   z-index: 2;
-  background: #050215;
+  background: #09011b;
   padding: 5.21vw 0vw 5.21vw 0vw;
 `;
 
@@ -18,8 +18,7 @@ export const InsightHeader = styled.h1`
   margin: 0;
   letter-spacing: -0.05vw;
   line-height: 2.5vw;
-  padding-left: 7.24vw;
-  padding-bottom: 1.04vw;
+  padding: 0vw 0vw 1.04vw 7.24vw;
 `;
 
 export const InsightSub = styled.p`
@@ -28,16 +27,23 @@ export const InsightSub = styled.p`
   color: white;
   margin: 0;
   line-height: 1.3vw;
+  padding: 0vw 0vw 66px 7.24vw;
 `;
 
 export const CardWrapper = styled.div`
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50vw;
-  height: 23.18vw;
-  background: #050215;
-  position: absolute;
+  width: 600px;
+`;
+
+export const CardWrapperStart = styled.div`
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 115px;
 `;
 
 export const InsightTop = styled.div`
@@ -62,55 +68,40 @@ export const InsightUl = styled.ul`
 
 export const InsightContent = styled.div`
   width: 100%;
-  height: 25vw;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: 25vw;
 `;
 
 export const InsightCard = styled.div`
-  height: 23.18vw;
-  width: 44.27vw;
-  padding: 4.43vw 5.21vw 1.3vw 19.22vw;
-  background: #d0e4f9;
-  background: ${({ alt }) => (alt ? "#F2E6E8" : "#d0e4f9")};
+  width: 527px;
+  height: 301px;
+  padding: 38px 42px;
+  background: #141226;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   flex-direction: column;
-  border-radius: 1.67vw;
-  background-image: url(${img1});
-  background-position: 10vw left;
-  background-size: 16vw 23.18vw;
-  background-repeat: no-repeat;
+  border-radius: 32px;
   img {
-    height: 3vw;
+    height: 61px;
     width: auto;
     display: block;
   }
-  button {
-    height: 2.97vw;
-    width: 9.38vw;
-    border-radius: 1.56vw;
-    color: white;
-    font-size: 1.04vw;
-    font-weight: 300;
-    background: #71a2ff;
-    border: none;
-  }
   h2 {
-    font-size: 1.82vw;
+    font-size: 28px;
     font-weight: 600;
-    letter-spacing: -0.11vw;
-    color: #050215;
-    line-height: 1.98vw;
+    letter-spacing: -1.65px;
+    color: #ffffff;
+    line-height: 31px;
     margin: 0vw;
   }
   p {
-    font-size: 0.83vw;
+    font-size: 16px;
     font-weight: 300;
-    color: #0c0820;
-    line-height: 1.3vw;
+    color: #736f88;
+    line-height: 25px;
     margin: 0vw;
   }
 `;
