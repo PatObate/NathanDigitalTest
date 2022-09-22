@@ -79,7 +79,9 @@ const BlogSection = () => {
                 established and trusted brands includes <br />
                 government entities.
               </h3>
-              <button>EXPLORE</button>
+              <div data-hover="explore">
+                <button>EXPLORE</button>
+              </div>
             </BlogGridSmall1>
             <BlogGridSmall1 className="grid-3">
               <p>#ATS</p>
@@ -92,7 +94,9 @@ const BlogSection = () => {
                 established and trusted brands includes <br />
                 government entities.
               </h3>
-              <button>EXPLORE</button>
+              <div data-hover="explore">
+                <button>EXPLORE</button>
+              </div>
             </BlogGridSmall1>
           </BlogGridContainer>
         </BlogRow>
@@ -150,7 +154,9 @@ const BlogSection = () => {
               </h2>
             </BlogData>
           </BlogOption>
-          <button>SEE MORE</button>
+          <div data-hover="see more">
+            <button>SEE MORE</button>
+          </div>
         </BlogRow2>
       </BlogContainer>
     </>

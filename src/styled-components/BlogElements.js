@@ -214,7 +214,7 @@ export const BlogGridSmall1 = styled.div`
     line-height: 1.3vw;
     font-weight: 300;
     font-size: 0.83vw;
-    color: #787c8e;
+    color: white;
   }
 
   button {

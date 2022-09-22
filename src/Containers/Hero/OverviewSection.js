@@ -254,7 +254,9 @@ const OverviewSection = () => {
           </OverviewRow>
           <OverviewRow2>
             <OverviewImg src={data} alt="img" />
-            <OverviewButton>Explore</OverviewButton>
+            <div data-hover="explore">
+              <OverviewButton>Explore</OverviewButton>
+            </div>
           </OverviewRow2>
           <OverviewRow>
             <OverviewData>
