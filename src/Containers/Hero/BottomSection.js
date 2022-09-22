@@ -21,7 +21,7 @@ const BottomSection = () => {
       .timeline({
         scrollTrigger: {
           trigger: bottomRef.current,
-          start: "top +=900",
+          start: "top +=850",
         },
       })
       .from(m(".bot1"), {

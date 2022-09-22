@@ -117,7 +117,7 @@ const InsightsSection = () => {
       .timeline({
         scrollTrigger: {
           trigger: moduleContainerRef.current,
-          start: "top +=900",
+          start: "top +=850",
         },
       })
       .from(z(".insight-header"), {
