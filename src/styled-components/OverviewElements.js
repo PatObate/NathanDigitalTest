@@ -90,6 +90,11 @@ export const OverviewRow2 = styled.div`
   align-items: center;
   flex-direction: column;
   justify-content: flex-end;
+
+  div {
+    position: relative;
+    z-index: 2;
+  }
 `;
 
 export const OverviewImg = styled.img`
@@ -108,6 +113,7 @@ export const OverviewButton = styled.button`
   font-size: 1.04vw;
   font-weight: 100;
   z-index: 2;
+  border: none;
 `;
 
 export const OverviewData = styled.div`

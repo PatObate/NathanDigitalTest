@@ -107,13 +107,16 @@ const WorkSection = () => {
           <div className="work-circle-outer" />
           <div className="work-circle-inner" />
           <div className="work-icon" />
-          <div className="work-window" />
-          <div className="work-cloud" />
-          <div className="work-aws" />
-          <div className="work-fox" />
-          <div className="work-math" />
-          <div className="work-man" />
-          <div className="work-client" />
+          <div className="work-window" data-hover="microsoft implementation" />
+          <div className="work-cloud" data-hover="google cloud" />
+          <div className="work-aws" data-hover="amazon web services" />
+          <div
+            className="work-fox"
+            data-hover="software development life cycle"
+          />
+          <div className="work-math" data-hover="functional consultant" />
+          <div className="work-man" data-hover="technical consultant" />
+          <div className="work-client" data-hover="client" />
         </div>
         <div className="work-row2">
           <h2 className="work-h2">What we do</h2>
@@ -131,7 +134,11 @@ const WorkSection = () => {
               #DataArtificialIntelligence
             </div>
           </div>
-          <button className="work-button">Contact Us</button>
+          <div data-hover="contact">
+            <button className="work-button" data-hover="contact us">
+              Contact Us
+            </button>
+          </div>
         </div>
       </div>
     </div>

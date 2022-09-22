@@ -54,7 +54,11 @@ const BottomSection = () => {
           SAS experience with Nathan Digital. <br />
           <span> You’ll never look back.</span>
         </h1>
-        <button className="bottom-button">Contact Us</button>
+        <div>
+          <div data-hover="contact us">
+            <button className="bottom-button">Contact Us</button>
+          </div>
+        </div>
       </div>
       <div className="bottom-div" ref={bottomRef}>
         <div className="bottom-col bot1">

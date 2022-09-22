@@ -28,7 +28,7 @@ const containerVariants = {
   },
 };
 
-const WaveSection = ({ handleHover, handleHover2 }) => {
+const WaveSection = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
   const [isOn, setIsOn] = useState(false);
@@ -151,15 +151,15 @@ const WaveSection = ({ handleHover, handleHover2 }) => {
           </VideoWrapper>
         </VideoBackground>
         <Sidebar isOpen={isOpen} toggle={toggle} />
-        <motion.div
-          className="menu"
-          onClick={toggle}
-          onMouseEnter={handleHover}
-          onMouseLeave={handleHover2}
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        />
+        <div data-hover="menu">
+          <motion.div
+            className="menu"
+            onClick={toggle}
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          />
+        </div>
         <motion.div
           className="digital-wrapper"
           ref={transformRef}
@@ -175,16 +175,19 @@ const WaveSection = ({ handleHover, handleHover2 }) => {
             </div>
             <nav className="navigation-wrapper">
               <img src={logo} alt="logo" className="logo-picture" />
-              <Link
-                to="/products"
-                className="navigation-menu cursor-hover-item"
-                data-cursor-text="LEARN MORE!"
-                data-cursor-text-repeat="3"
-                onMouseEnter={handleToggle}
-                onMouseLeave={handleToggle2}
-              >
-                PRODUCTS
-              </Link>
+
+              <div data-hover="products">
+                <Link
+                  to="/products"
+                  className="navigation-menu cursor-hover-item cursor-scale"
+                  data-cursor-text="LEARN MORE!"
+                  data-cursor-text-repeat="3"
+                  onMouseEnter={handleToggle}
+                  onMouseLeave={handleToggle2}
+                >
+                  PRODUCTS
+                </Link>
+              </div>
               <DropDown
                 className="drop-down"
                 drop={isOn}
@@ -262,25 +265,18 @@ const WaveSection = ({ handleHover, handleHover2 }) => {
                   </div>
                 </div>
               </DropDown>
-              <div
-                className="navigation-menu"
-                onMouseEnter={handleHover}
-                onMouseLeave={handleHover2}
-              >
+              <div className="navigation-menu" data-hover="service & support">
                 SERVICE & SUPPORT
               </div>
               <div />
               <div />
               <div />
-              <div className="navigation-menu2">CONTACT US</div>
+              <div className="navigation-menu2" data-hover="contact us">
+                CONTACT US
+              </div>
             </nav>
           </div>
-          <h1
-            className="transform-header"
-            onMouseEnter={handleHover}
-            onMouseLeave={handleHover2}
-            ref={textRef}
-          >
+          <h1 className="transform-header" ref={textRef}>
             Software that <br />
             transform your <br />
             business
@@ -297,6 +293,7 @@ const WaveSection = ({ handleHover, handleHover2 }) => {
             onClick={onClickVid}
             onMouseEnter={onHoverVid}
             onMouseLeave={OnLeaveVid}
+            data-hover="video"
           >
             <div
               className="t_over"

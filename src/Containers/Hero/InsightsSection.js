@@ -134,7 +134,7 @@ const InsightsSection = () => {
       });
   });
   return (
-    <InsightContainer ref={moduleContainerRef}>
+    <InsightContainer ref={moduleContainerRef} data-hover="scroll down">
       <InsightHeader className="insight-header">
         Our trusted Partners & Clients
       </InsightHeader>

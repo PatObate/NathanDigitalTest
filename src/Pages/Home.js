@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import CustomCursor from "../components/cursor";
 import WaveSection from "../Containers/Hero/WaveSection";
 import OverviewSection from "../Containers/Hero/OverviewSection";
 import { ScrollTrigger } from "gsap/all";
@@ -12,6 +11,7 @@ import FooterSection from "../Containers/Hero/FooterSection";
 import TestSections from "../Containers/Hero/TestSections";
 import TestSection3 from "../Containers/Hero/TestSection3";
 import BlogSection from "../Containers/Hero/BlogSection";
+import Cursor from "../components/Cursor";
 gsap.registerPlugin(ScrollTrigger);
 
 const overlap = () => {
@@ -28,10 +28,10 @@ const overlap = () => {
 };
 
 const Home = () => {
-  const [isHover, setIsHover] = useState(false);
+  // const [isHover, setIsHover] = useState(false);
 
-  const handleHover = () => setIsHover(true);
-  const handleHover2 = () => setIsHover(false);
+  // const handleHover = () => setIsHover(true);
+  // const handleHover2 = () => setIsHover(false);
 
   useEffect(() => {
     ScrollTrigger.getById("myId").kill();
@@ -42,7 +42,8 @@ const Home = () => {
     <>
       <div>
         {/* <CustomCursor isHover={isHover} /> */}
-        <WaveSection handleHover={handleHover} handleHover2={handleHover2} />
+        <Cursor />
+        <WaveSection />
         <OverviewSection />
         <InsightsSection />
         {/* <TrustedSection /> */}
