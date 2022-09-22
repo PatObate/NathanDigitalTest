@@ -26,13 +26,14 @@ const TrustedSection = () => {
       .timeline({
         scrollTrigger: {
           trigger: trustedRef.current,
-          start: "top +=500",
+          start: "top +=900",
         },
       })
       .from(q(".trusted-header"), {
-        x: -100,
-        duration: 0.3,
+      x: -100,
         opacity: 0,
+        ease: "back",
+        duration: 0.6,
       })
       .from(q(".trusted-sub"), {
         x: -100,

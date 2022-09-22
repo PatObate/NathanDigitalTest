@@ -117,18 +117,20 @@ const InsightsSection = () => {
       .timeline({
         scrollTrigger: {
           trigger: moduleContainerRef.current,
-          start: "top +=500",
+          start: "top +=900",
         },
       })
       .from(z(".insight-header"), {
         x: -100,
-        duration: 0.3,
         opacity: 0,
+        ease: "back",
+        duration: 0.6,
       })
       .from(z(".insight-sub"), {
         x: -100,
-        duration: 0.3,
         opacity: 0,
+        ease: "back",
+        duration: 0.6,
       });
   });
   return (

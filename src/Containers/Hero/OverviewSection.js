@@ -37,16 +37,20 @@ const OverviewSection = () => {
       .timeline({
         scrollTrigger: {
           trigger: overviewRef.current,
-          start: "top +=500",
+          start: "top +=900",
         },
       })
       .from(a(".overview-header"), {
         x: -100,
         opacity: 0,
+        ease: "back",
+        duration: 0.6,
       })
       .from(a(".overview-menu"), {
         x: -100,
         opacity: 0,
+        ease: "back",
+        duration: 0.6,
       });
 
     tl4Trigger.current = gsap.timeline({
