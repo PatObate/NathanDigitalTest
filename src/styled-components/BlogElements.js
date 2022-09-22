@@ -4,7 +4,7 @@ import porsche from "../images/BlogSection/porsche1.jpg";
 
 export const BlogContainer = styled.div`
   width: 100%;
-  height: auto;
+  height: 120vh;
   padding: 5.21vw 7.24vw 5.21vw 7.24vw;
   background: #09011b;
   z-index: 2;
@@ -31,7 +31,7 @@ export const BlogRow2 = styled.div`
   justify-content: space-between;
   flex-direction: column;
   height: 51.82vw;
-  padding-right: 8.85vw;
+  padding-right: 8.5vw;
 
   h2 {
     color: #f3f2ff;
@@ -62,7 +62,7 @@ export const BlogRow2 = styled.div`
 `;
 
 export const BlogOption = styled.div`
-  width: 26.04vw;
+  width: 27.04vw;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -87,11 +87,12 @@ export const BlogData = styled.div`
   }
 `;
 
-export const BlogPic = styled.img`
+export const BlogPic = styled.div`
   height: 7.29vw;
   width: 7.29vw;
   border-radius: 0.57vw;
   display: block;
+  background: black;
 `;
 
 export const BlogGridBig = styled.div`
@@ -99,7 +100,7 @@ export const BlogGridBig = styled.div`
   height: 25vw;
   border-radius: 1.46vw;
   padding: 12.24vw 1.41vw 2.19vw 1.41vw;
-  background-image: url(${framesea});
+  /* background-image: url(${framesea}); */
   background-size: cover;
   background-position: center center;
   position: relative;
@@ -165,7 +166,7 @@ export const BlogGridSmall1 = styled.div`
   width: 22.55vw;
   height: 25.83vw;
   border-radius: 1.46vw;
-  padding: 9.06vw 1.41vw 2.19vw 1.41vw;
+  padding: 8.8vw 1.41vw 2.19vw 1.41vw;
   background-image: url(${porsche});
   background-position: top center;
   background-size: 22.55vw 14.74vw;
@@ -197,8 +198,8 @@ export const BlogGridSmall1 = styled.div`
 
   h2 {
     margin: 0vw;
-    letter-spacing: -0.09vw;
-    padding-bottom: 1.04vw;
+    letter-spacing: -0.08vw;
+    padding-bottom: 1.8vw;
     line-height: 1.61vw;
     font-weight: 600;
     font-size: 1.45;
@@ -209,10 +210,10 @@ export const BlogGridSmall1 = styled.div`
 
   h3 {
     margin: 0vw;
-    padding-bottom: 1.04vw;
+    padding-bottom: 2.5vw;
     line-height: 1.3vw;
     font-weight: 300;
-    font-size: 0.83;
+    font-size: 0.83vw;
     color: #787c8e;
   }
 

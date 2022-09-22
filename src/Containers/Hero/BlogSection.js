@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import {
   BlogContainer,
   BlogData,
@@ -13,36 +13,53 @@ import {
 import group from "../../images/BlogSection/businessgroup.jpg";
 import img2 from "../../images/BlogSection/aerial-top-view-of-a-solar-panels-power-plant-2021-08-28-11-59-43-utc.jpg";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+gsap.registerPlugin(ScrollTrigger);
 
 const BlogSection = () => {
   const blogRef = useRef();
   const tlblog = useRef();
   const bloge = gsap.utils.selector(blogRef);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     tlblog.current = gsap
       .timeline({
         scrollTrigger: {
           trigger: blogRef.current,
-          start: "top +=500",
+          start: "top +=900",
         },
       })
-      .from(bloge(".blog-row-1"), {
+      .from(bloge(".grid-1"), {
         x: -100,
-        duration: 0.3,
         opacity: 0,
+        ease: "back",
+        duration: 0.6,
+        delay: 0.1,
+      })
+      .from(bloge(".grid-2"), {
+        y: 100,
+        opacity: 0,
+        ease: "back",
+        duration: 0.6,
+      })
+      .from(bloge(".grid-3"), {
+        y: 100,
+        opacity: 0,
+        ease: "back",
+        duration: 0.6,
       })
       .from(bloge(".blog-row-2"), {
         x: 100,
-        duration: 0.3,
         opacity: 0,
+        ease: "back",
+        duration: 0.6,
       });
-  }, []);
+  });
   return (
     <>
       <BlogContainer ref={blogRef}>
-        <BlogRow className="blog-row-1">
-          <BlogGridBig>
+        <BlogRow>
+          <BlogGridBig className="grid-1">
             <p>#ChallengeFit</p>
             <h2>
               Enabled HRMS Enhancement <br />
@@ -51,7 +68,7 @@ const BlogSection = () => {
             <button>Learn More</button>
           </BlogGridBig>
           <BlogGridContainer>
-            <BlogGridSmall1>
+            <BlogGridSmall1 className="grid-2">
               <p>#ATS</p>
               <h2>
                 Enabled HRMS Enhancement <br />
@@ -64,7 +81,7 @@ const BlogSection = () => {
               </h3>
               <button>EXPLORE</button>
             </BlogGridSmall1>
-            <BlogGridSmall1>
+            <BlogGridSmall1 className="grid-3">
               <p>#ATS</p>
               <h2>
                 Enabled HRMS Enhancement <br />
@@ -90,7 +107,8 @@ const BlogSection = () => {
             subscription fee required.
           </p>
           <BlogOption>
-            <BlogPic src={group} alt="image" />
+            {/* <BlogPic src={group} alt="image" /> */}
+            <BlogPic />
             <BlogData>
               <p>#ChallengeFit</p>
               <h2>
@@ -100,7 +118,8 @@ const BlogSection = () => {
             </BlogData>
           </BlogOption>
           <BlogOption>
-            <BlogPic src={img2} alt="image" />
+            <BlogPic />
+            {/* <BlogPic src={img2} alt="image" /> */}
             <BlogData>
               <p>#ChallengeFit</p>
               <h2>
@@ -110,7 +129,8 @@ const BlogSection = () => {
             </BlogData>
           </BlogOption>
           <BlogOption>
-            <BlogPic src={img2} alt="image" />
+            <BlogPic />
+            {/* <BlogPic src={img2} alt="image" /> */}
             <BlogData>
               <p>#ChallengeFit</p>
               <h2>
@@ -120,7 +140,8 @@ const BlogSection = () => {
             </BlogData>
           </BlogOption>
           <BlogOption>
-            <BlogPic src={img2} alt="image" />
+            <BlogPic />
+            {/* <BlogPic src={img2} alt="image" /> */}
             <BlogData>
               <p>#ChallengeFit</p>
               <h2>

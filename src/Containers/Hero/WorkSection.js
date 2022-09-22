@@ -27,58 +27,70 @@ const WorkSection = () => {
       .timeline({
         scrollTrigger: {
           trigger: workRef.current,
-          start: "top +=500",
+          start: "top +=900",
         },
       })
       .from(x(".work-heading"), {
         x: -100,
-        duration: 0.3,
         opacity: 0,
+        ease: "back",
+        duration: 0.6,
       })
       .from(x(".work-icon"), {
-        duration: 0.1,
+        duration: 0.12,
+        ease: "back",
         opacity: 0,
       })
       .from(x(".work-window"), {
-        duration: 0.1,
+        duration: 0.12,
+        ease: "back",
         opacity: 0,
       })
       .from(x(".work-cloud"), {
-        duration: 0.1,
+        duration: 0.12,
+        ease: "back",
         opacity: 0,
       })
       .from(x(".work-aws"), {
-        duration: 0.1,
+        duration: 0.12,
+        ease: "back",
         opacity: 0,
       })
       .from(x(".work-fox"), {
-        duration: 0.1,
+        duration: 0.12,
+        ease: "back",
         opacity: 0,
       })
       .from(x(".work-math"), {
-        duration: 0.1,
+        duration: 0.12,
+        ease: "back",
         opacity: 0,
       })
       .from(x(".work-man"), {
-        duration: 0.1,
+        duration: 0.12,
+        ease: "back",
         opacity: 0,
       })
       .from(x(".work-client"), {
-        duration: 0.1,
+        duration: 0.12,
+        ease: "back",
         opacity: 0,
       })
       .from(x(".work-circle-outer"), {
-        duration: 0.3,
         opacity: 0,
+        ease: "back",
+        duration: 0.2,
       })
       .from(x(".work-circle-inner"), {
-        duration: 0.3,
         opacity: 0,
+        ease: "back",
+        duration: 0.2,
       })
       .from(x(".work-row2"), {
         x: 100,
-        duration: 0.3,
         opacity: 0,
+        ease: "back",
+        duration: 0.8,
       });
   }, []);
 
