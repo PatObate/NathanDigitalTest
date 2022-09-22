@@ -21,49 +21,48 @@ export const BlogRow = styled.div`
   align-items: flex-start;
   justify-content: space-between;
   flex-direction: column;
-  width: 893px;
-  height: 995px;
+  width: 46.51vw;
+  height: 51.82vw;
 `;
 
 export const BlogRow2 = styled.div`
-  height: 100%;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   flex-direction: column;
-  height: 995px;
-  padding-right: 150px;
+  height: 51.82vw;
+  padding-right: 8.85vw;
 
   h2 {
     color: #f3f2ff;
-    font-size: 50px;
-    line-height: 48px;
-    letter-spacing: -1px;
+    font-size: 2.6vw;
+    line-height: 2.5vw;
+    letter-spacing: -0.05vw;
     font-weight: 600;
-    margin: 0px;
+    margin: 0vw;
   }
 
   p {
     color: #b6bdcc;
-    font-size: 16px;
-    line-height: 25px;
+    font-size: 0.83vw;
+    line-height: 1.3vw;
     font-weight: 300;
-    margin: 0px;
+    margin: 0vw;
   }
 
   button {
-    font-size: 16px;
+    font-size: 0.83vw;
     font-weight: 300;
     color: #71a2ff;
     background: none;
     text-decoration: underline;
-    letter-spacing: 2.24px;
+    letter-spacing: 0.12vw;
     border: none;
   }
 `;
 
 export const BlogOption = styled.div`
-  width: 500px;
+  width: 26.04vw;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -72,34 +71,34 @@ export const BlogOption = styled.div`
 export const BlogData = styled.div`
   p {
     color: #71a2ff;
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 0.94vw;
+    line-height: 1.25vw;
     font-weight: 600;
-    margin: 0px;
-    padding-bottom: 10px;
+    margin: 0vw;
+    padding-bottom: 0.52vw;
   }
 
   h2 {
     color: #a1a7c4;
-    font-size: 20px;
-    line-height: 27px;
+    font-size: 1.04vw;
+    line-height: 1.41vw;
     font-weight: 400;
-    margin: 0px;
+    margin: 0vw;
   }
 `;
 
 export const BlogPic = styled.img`
-  height: 140px;
-  width: 140px;
-  border-radius: 11px;
+  height: 7.29vw;
+  width: 7.29vw;
+  border-radius: 0.57vw;
   display: block;
 `;
 
 export const BlogGridBig = styled.div`
-  width: 893px;
-  height: 480px;
-  border-radius: 28px;
-  padding: 235px 27.1px 42px 27.1px;
+  width: 46.51vw;
+  height: 25vw;
+  border-radius: 1.46vw;
+  padding: 12.24vw 1.41vw 2.19vw 1.41vw;
   background-image: url(${framesea});
   background-size: cover;
   background-position: center center;
@@ -107,9 +106,9 @@ export const BlogGridBig = styled.div`
 
   &::before {
     content: "";
-    width: 893px;
-    height: 480px;
-    border-radius: 28px;
+    width: 46.51vw;
+    height: 25vw;
+    border-radius: 1.46vw;
     position: absolute;
     top: 0;
     right: 0;
@@ -119,35 +118,35 @@ export const BlogGridBig = styled.div`
   }
 
   p {
-    margin: 0px;
-    padding-bottom: 20px;
+    margin: 0vw;
+    padding-bottom: 1.04vw;
     color: #71a2ff;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 0.94vw;
     z-index: 2;
     position: relative;
   }
 
   h2 {
-    margin: 0px;
-    letter-spacing: -1px;
-    padding-bottom: 20px;
-    line-height: 48px;
+    margin: 0vw;
+    letter-spacing: -0.05vw;
+    padding-bottom: 1.04vw;
+    line-height: 2.5vw;
     font-weight: 600;
-    font-size: 50px;
+    font-size: 2.6vw;
     z-index: 2;
     position: relative;
     color: white;
   }
 
   button {
-    width: 142px;
-    height: 41px;
+    width: 7.4vw;
+    height: 2.14vw;
     z-index: 2;
     position: relative;
-    border-radius: 30px;
+    border-radius: 1.56vw;
     background: white;
-    font-size: 18px;
+    font-size: 0.94vw;
     font-weight: 300;
     text-align: center;
     color: #000000;
@@ -163,21 +162,21 @@ export const BlogGridContainer = styled.div`
 `;
 
 export const BlogGridSmall1 = styled.div`
-  width: 433px;
-  height: 496px;
-  border-radius: 28px;
-  padding: 174px 27.1px 42px 27.1px;
+  width: 22.55vw;
+  height: 25.83vw;
+  border-radius: 1.46vw;
+  padding: 9.06vw 1.41vw 2.19vw 1.41vw;
   background-image: url(${porsche});
   background-position: top center;
-  background-size: 433px 283px;
+  background-size: 22.55vw 14.74vw;
   background-repeat: no-repeat;
   position: relative;
   background-color: #161428;
 
   &::before {
     content: "";
-    width: 433px;
-    height: 283px;
+    width: 22.55vw;
+    height: 14.74vw;
     position: absolute;
     top: 0;
     right: 0;
@@ -187,40 +186,43 @@ export const BlogGridSmall1 = styled.div`
   }
 
   p {
-    margin: 0px;
-    padding-bottom: 20px;
+    margin: 0vw;
+    padding-bottom: 1.04vw;
     color: #71a2ff;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 0.94vw;
     z-index: 2;
     position: relative;
   }
+
   h2 {
-    margin: 0px;
-    letter-spacing: -1.65px;
-    padding-bottom: 20px;
-    line-height: 31px;
+    margin: 0vw;
+    letter-spacing: -0.09vw;
+    padding-bottom: 1.04vw;
+    line-height: 1.61vw;
     font-weight: 600;
-    font-size: 28px;
+    font-size: 1.45;
     color: white;
     z-index: 2;
     position: relative;
   }
+
   h3 {
-    margin: 0px;
-    padding-bottom: 20px;
-    line-height: 25px;
+    margin: 0vw;
+    padding-bottom: 1.04vw;
+    line-height: 1.3vw;
     font-weight: 300;
-    font-size: 16px;
+    font-size: 0.83;
     color: #787c8e;
   }
+
   button {
-    font-size: 16px;
+    font-size: 0.83vw;
     font-weight: 300;
     color: #71a2ff;
     background: none;
     text-decoration: underline;
-    letter-spacing: 2.24px;
+    letter-spacing: 0.12vw;
     border: none;
   }
 `;

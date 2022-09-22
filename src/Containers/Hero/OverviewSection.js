@@ -53,8 +53,8 @@ const OverviewSection = () => {
       scrollTrigger: {
         trigger: overviewRef.current,
         start: "top top",
-        end: "+=3000px",
-        scrub: 5,
+        end: "+=3000",
+        scrub: 3,
         pin: true,
         snap: {
           snapTo: "labels",
@@ -193,6 +193,8 @@ const OverviewSection = () => {
         },
         7
       );
+
+    tl4Trigger.current.scrollTrigger.refresh();
   });
 
   return (

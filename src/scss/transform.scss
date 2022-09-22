@@ -17,6 +17,7 @@
   justify-content: space-between;
   padding: 0vw 7.24vw;
   z-index: 1;
+  overflow: hidden;
 }
 
 .menu {
@@ -59,7 +60,7 @@
   align-items: flex-start;
   justify-content: space-between;
   width: 4vw;
-  margin-bottom: 83px;
+  margin-bottom: 4.32vw;
   z-index: 2;
   position: relative;
 }
@@ -68,7 +69,7 @@
   font-weight: 100;
   color: white;
   font-size: 1.04vw;
-  margin: 21px 0px 0px 0px;
+  margin: 1.09vw 0vw 0vw 0vw;
 }
 
 .navigation-wrapper {

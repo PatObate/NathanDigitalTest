@@ -27,7 +27,7 @@ export const InsightSub = styled.p`
   color: white;
   margin: 0;
   line-height: 1.3vw;
-  padding: 0vw 0vw 66px 7.24vw;
+  padding: 0vw 0vw 3.44vw 7.24vw;
 `;
 
 export const CardWrapper = styled.div`
@@ -35,7 +35,7 @@ export const CardWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 600px;
+  width: 31.25vw;
 `;
 
 export const CardWrapperStart = styled.div`
@@ -43,7 +43,7 @@ export const CardWrapperStart = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 115px;
+  width: 5.99vw;
 `;
 
 export const InsightTop = styled.div`
@@ -75,33 +75,33 @@ export const InsightContent = styled.div`
 `;
 
 export const InsightCard = styled.div`
-  width: 527px;
-  height: 301px;
-  padding: 38px 42px;
+  width: 27.45vw;
+  height: 15.68vw;
+  padding: 1.98vw 2.19vw;
   background: #141226;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   flex-direction: column;
-  border-radius: 32px;
+  border-radius: 1.67vw;
   img {
-    height: 61px;
+    height: 3.18vw;
     width: auto;
     display: block;
   }
   h2 {
-    font-size: 28px;
+    font-size: 1.46vw;
     font-weight: 600;
-    letter-spacing: -1.65px;
+    letter-spacing: -0.09vw;
     color: #ffffff;
-    line-height: 31px;
+    line-height: 1.61vw;
     margin: 0vw;
   }
   p {
-    font-size: 16px;
+    font-size: 0.83vw;
     font-weight: 300;
     color: #736f88;
-    line-height: 25px;
+    line-height: 1.3vw;
     margin: 0vw;
   }
 `;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import {
   BlogContainer,
   BlogData,
@@ -12,12 +12,36 @@ import {
 } from "../../styled-components/BlogElements";
 import group from "../../images/BlogSection/businessgroup.jpg";
 import img2 from "../../images/BlogSection/aerial-top-view-of-a-solar-panels-power-plant-2021-08-28-11-59-43-utc.jpg";
+import gsap from "gsap";
 
 const BlogSection = () => {
+  const blogRef = useRef();
+  const tlblog = useRef();
+  const bloge = gsap.utils.selector(blogRef);
+
+  useLayoutEffect(() => {
+    tlblog.current = gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: blogRef.current,
+          start: "top +=500",
+        },
+      })
+      .from(bloge(".blog-row-1"), {
+        x: -100,
+        duration: 0.3,
+        opacity: 0,
+      })
+      .from(bloge(".blog-row-2"), {
+        x: 100,
+        duration: 0.3,
+        opacity: 0,
+      });
+  }, []);
   return (
     <>
-      <BlogContainer>
-        <BlogRow>
+      <BlogContainer ref={blogRef}>
+        <BlogRow className="blog-row-1">
           <BlogGridBig>
             <p>#ChallengeFit</p>
             <h2>
@@ -55,7 +79,7 @@ const BlogSection = () => {
             </BlogGridSmall1>
           </BlogGridContainer>
         </BlogRow>
-        <BlogRow2>
+        <BlogRow2 className="blog-row-2">
           <h2>
             Read our latest <br />
             insights
