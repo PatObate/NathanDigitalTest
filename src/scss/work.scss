@@ -92,6 +92,23 @@
     position: absolute;
     top: 2vw;
     right: 2vw;
+
+    @keyframes float {
+      0% {
+        transform: translatey(0vw);
+      }
+
+      50% {
+        transform: translatey(-10vw);
+      }
+
+      100% {
+        transform: translatey(0vw);
+      }
+    }
+
+    transform: translatey(0vw);
+    animation: float 6s ease-in-out infinite;
   }
 
   .work-cloud {
@@ -105,6 +122,23 @@
     position: absolute;
     top: 12vw;
     right: -1.4vw;
+
+    @keyframes float {
+      0% {
+        transform: translatey(0vw);
+      }
+
+      50% {
+        transform: translatey(-10vw);
+      }
+
+      100% {
+        transform: translatey(0vw);
+      }
+    }
+
+    transform: translatey(0vw);
+    animation: float 6.1s ease-in-out infinite;
   }
 
   .work-aws {
@@ -118,6 +152,23 @@
     position: absolute;
     top: 21vw;
     right: 1.2vw;
+
+    @keyframes float {
+      0% {
+        transform: translatey(0vw);
+      }
+
+      50% {
+        transform: translatey(-10vw);
+      }
+
+      100% {
+        transform: translatey(0vw);
+      }
+    }
+
+    transform: translatey(0vw);
+    animation: float 5.1s ease-in-out infinite;
   }
 
   .work-math {
@@ -131,6 +182,22 @@
     position: absolute;
     top: 22vw;
     left: 2vw;
+
+    @keyframes float {
+      0% {
+        transform: translatey(0vw);
+      }
+
+      50% {
+        transform: translatey(-10vw);
+      }
+      100% {
+        transform: translatey(0vw);
+      }
+    }
+
+    transform: translatey(0vw);
+    animation: float 7s ease-in-out infinite;
   }
 
   .work-fox {
@@ -144,6 +211,23 @@
     position: absolute;
     top: 26vw;
     right: 12vw;
+
+    @keyframes float {
+      0% {
+        transform: translatey(0vw);
+      }
+
+      50% {
+        transform: translatey(-10vw);
+      }
+
+      100% {
+        transform: translatey(0vw);
+      }
+    }
+
+    transform: translatey(0vw);
+    animation: float 6.9s ease-in-out infinite;
   }
 
   .work-man {
@@ -157,6 +241,22 @@
     position: absolute;
     top: 10vw;
     right: 25.6vw;
+    @keyframes float {
+      0% {
+        transform: translatey(0vw);
+      }
+
+      50% {
+        transform: translatey(-10vw);
+      }
+
+      100% {
+        transform: translatey(0vw);
+      }
+    }
+
+    transform: translatey(0vw);
+    animation: float 5.65s ease-in-out infinite;
   }
 
   .work-client {
@@ -170,6 +270,22 @@
     position: absolute;
     top: 0vw;
     right: 19.6vw;
+    @keyframes float {
+      0% {
+        transform: translatey(0vw);
+      }
+
+      50% {
+        transform: translatey(-10vw);
+      }
+
+      100% {
+        transform: translatey(0vw);
+      }
+    }
+
+    transform: translatey(0vw);
+    animation: float 5.1s ease-in-out infinite;
   }
 }
 

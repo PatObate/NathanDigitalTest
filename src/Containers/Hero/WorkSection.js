@@ -8,13 +8,20 @@ const WorkSection = () => {
   const x = gsap.utils.selector(workRef);
 
   useLayoutEffect(() => {
-    // gsap.to(x(".work-girl"), {
-    //   rotation: 360,
-    //   transformOrigin: "center",
-    //   ease: "none",
-    //   duration: 60,
-    //   repeat: -1,
-    // });
+    gsap.to(x(".work-circle-outer"), {
+      rotation: 360,
+      transformOrigin: "center",
+      ease: "none",
+      duration: 60,
+      repeat: -1,
+    });
+    gsap.to(x(".work-circle-inner"), {
+      rotation: -360,
+      transformOrigin: "center",
+      ease: "none",
+      duration: 60,
+      repeat: -1,
+    });
 
     tl5.current = gsap
       .timeline({
@@ -28,33 +35,49 @@ const WorkSection = () => {
         duration: 0.3,
         opacity: 0,
       })
-      .from(x(".work-girl"), {
-        x: -100,
+      .from(x(".work-icon"), {
+        duration: 0.1,
+        opacity: 0,
+      })
+      .from(x(".work-window"), {
+        duration: 0.1,
+        opacity: 0,
+      })
+      .from(x(".work-cloud"), {
+        duration: 0.1,
+        opacity: 0,
+      })
+      .from(x(".work-aws"), {
+        duration: 0.1,
+        opacity: 0,
+      })
+      .from(x(".work-fox"), {
+        duration: 0.1,
+        opacity: 0,
+      })
+      .from(x(".work-math"), {
+        duration: 0.1,
+        opacity: 0,
+      })
+      .from(x(".work-man"), {
+        duration: 0.1,
+        opacity: 0,
+      })
+      .from(x(".work-client"), {
+        duration: 0.1,
+        opacity: 0,
+      })
+      .from(x(".work-circle-outer"), {
         duration: 0.3,
         opacity: 0,
       })
-      .from(x(".bubble"), {
-        duration: 0.2,
+      .from(x(".work-circle-inner"), {
+        duration: 0.3,
         opacity: 0,
       })
-      .from(x(".work-h2"), {
-        y: 100,
-        duration: 0.25,
-        opacity: 0,
-      })
-      .from(x(".work-h1"), {
-        y: 100,
-        duration: 0.25,
-        opacity: 0,
-      })
-      .from(x(".work-p"), {
-        y: 100,
-        duration: 0.25,
-        opacity: 0,
-      })
-      .from(x(".work-button"), {
-        y: 100,
-        duration: 0.2,
+      .from(x(".work-row2"), {
+        x: 100,
+        duration: 0.3,
         opacity: 0,
       });
   }, []);
