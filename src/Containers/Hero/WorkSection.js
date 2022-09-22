@@ -27,7 +27,7 @@ const WorkSection = () => {
       .timeline({
         scrollTrigger: {
           trigger: workRef.current,
-          start: "top +=900",
+          start: "top +=850",
         },
       })
       .from(x(".work-heading"), {

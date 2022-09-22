@@ -37,7 +37,7 @@ const OverviewSection = () => {
       .timeline({
         scrollTrigger: {
           trigger: overviewRef.current,
-          start: "top +=900",
+          start: "top +=850",
         },
       })
       .from(a(".overview-header"), {

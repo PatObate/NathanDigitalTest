@@ -26,7 +26,7 @@ const TrustedSection = () => {
       .timeline({
         scrollTrigger: {
           trigger: trustedRef.current,
-          start: "top +=900",
+          start: "top +=850",
         },
       })
       .from(q(".trusted-header"), {

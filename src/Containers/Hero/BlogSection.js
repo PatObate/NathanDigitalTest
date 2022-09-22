@@ -26,7 +26,7 @@ const BlogSection = () => {
       .timeline({
         scrollTrigger: {
           trigger: blogRef.current,
-          start: "top +=900",
+          start: "top +=850",
         },
       })
       .from(bloge(".grid-1"), {
